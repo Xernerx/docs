@@ -1,0 +1,854 @@
+{
+	"schemaVersion": "2.0",
+	"id": 0,
+	"name": "XERNERX WEBSOCKET",
+	"variant": "project",
+	"kind": 1,
+	"flags": {},
+	"children": [
+		{
+			"id": 2,
+			"name": "main",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 3,
+					"name": "XernerxWebsocket",
+					"variant": "declaration",
+					"kind": 128,
+					"flags": {},
+					"children": [
+						{
+							"id": 4,
+							"name": "constructor",
+							"variant": "declaration",
+							"kind": 512,
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 21,
+									"character": 1
+								}
+							],
+							"signatures": [
+								{
+									"id": 5,
+									"name": "XernerxWebsocket",
+									"variant": "signature",
+									"kind": 16384,
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "main.ts",
+											"line": 21,
+											"character": 1
+										}
+									],
+									"parameters": [
+										{
+											"id": 6,
+											"name": "__namedParameters",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 7,
+													"name": "__type",
+													"variant": "declaration",
+													"kind": 65536,
+													"flags": {},
+													"children": [
+														{
+															"id": 8,
+															"name": "token",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {},
+															"sources": [
+																{
+																	"fileName": "main.ts",
+																	"line": 21,
+																	"character": 31
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														},
+														{
+															"id": 9,
+															"name": "url",
+															"variant": "declaration",
+															"kind": 1024,
+															"flags": {
+																"isOptional": true
+															},
+															"sources": [
+																{
+																	"fileName": "main.ts",
+																	"line": 21,
+																	"character": 46
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														}
+													],
+													"groups": [
+														{
+															"title": "Properties",
+															"children": [
+																8,
+																9
+															]
+														}
+													]
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": 3,
+										"name": "XernerxWebsocket",
+										"package": "@xernerx/websocket"
+									}
+								}
+							]
+						},
+						{
+							"id": 12,
+							"name": "token",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isProtected": true,
+								"isReadonly": true
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 13,
+									"character": 20
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 17,
+							"name": "connect",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 28,
+									"character": 14
+								}
+							],
+							"signatures": [
+								{
+									"id": 18,
+									"name": "connect",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "================= CONNECTION ================="
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "main.ts",
+											"line": 28,
+											"character": 14
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": {
+											"packageName": "typescript",
+											"packagePath": "lib/lib.es5.d.ts",
+											"qualifiedName": "Promise"
+										},
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "void"
+											}
+										],
+										"name": "Promise",
+										"package": "typescript"
+									}
+								}
+							]
+						},
+						{
+							"id": 30,
+							"name": "create",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 145,
+									"character": 14
+								}
+							],
+							"signatures": [
+								{
+									"id": 31,
+									"name": "create",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "main.ts",
+											"line": 145,
+											"character": 14
+										}
+									],
+									"parameters": [
+										{
+											"id": 32,
+											"name": "service",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 33,
+											"name": "action",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 34,
+											"name": "body",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											},
+											"defaultValue": "{}"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": {
+											"packageName": "typescript",
+											"packagePath": "lib/lib.es5.d.ts",
+											"qualifiedName": "Promise"
+										},
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										],
+										"name": "Promise",
+										"package": "typescript"
+									}
+								}
+							]
+						},
+						{
+							"id": 40,
+							"name": "delete",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 163,
+									"character": 14
+								}
+							],
+							"signatures": [
+								{
+									"id": 41,
+									"name": "delete",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "main.ts",
+											"line": 163,
+											"character": 14
+										}
+									],
+									"parameters": [
+										{
+											"id": 42,
+											"name": "service",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 43,
+											"name": "action",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 44,
+											"name": "body",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											},
+											"defaultValue": "{}"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": {
+											"packageName": "typescript",
+											"packagePath": "lib/lib.es5.d.ts",
+											"qualifiedName": "Promise"
+										},
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										],
+										"name": "Promise",
+										"package": "typescript"
+									}
+								}
+							]
+						},
+						{
+							"id": 45,
+							"name": "disconnect",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 172,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 46,
+									"name": "disconnect",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "main.ts",
+											"line": 172,
+											"character": 8
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						},
+						{
+							"id": 25,
+							"name": "get",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 136,
+									"character": 14
+								}
+							],
+							"signatures": [
+								{
+									"id": 26,
+									"name": "get",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "================= CRUD ================="
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "main.ts",
+											"line": 136,
+											"character": 14
+										}
+									],
+									"parameters": [
+										{
+											"id": 27,
+											"name": "service",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 28,
+											"name": "action",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 29,
+											"name": "body",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											},
+											"defaultValue": "{}"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": {
+											"packageName": "typescript",
+											"packagePath": "lib/lib.es5.d.ts",
+											"qualifiedName": "Promise"
+										},
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										],
+										"name": "Promise",
+										"package": "typescript"
+									}
+								}
+							]
+						},
+						{
+							"id": 35,
+							"name": "update",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 154,
+									"character": 14
+								}
+							],
+							"signatures": [
+								{
+									"id": 36,
+									"name": "update",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "main.ts",
+											"line": 154,
+											"character": 14
+										}
+									],
+									"parameters": [
+										{
+											"id": 37,
+											"name": "service",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 38,
+											"name": "action",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 39,
+											"name": "body",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											},
+											"defaultValue": "{}"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": {
+											"packageName": "typescript",
+											"packagePath": "lib/lib.es5.d.ts",
+											"qualifiedName": "Promise"
+										},
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										],
+										"name": "Promise",
+										"package": "typescript"
+									}
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"children": [
+								4
+							]
+						},
+						{
+							"title": "Properties",
+							"children": [
+								12
+							]
+						},
+						{
+							"title": "Methods",
+							"children": [
+								17,
+								30,
+								40,
+								45,
+								25,
+								35
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "main.ts",
+							"line": 10,
+							"character": 13
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"children": [
+						3
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "main.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"documents": [
+		{
+			"id": 1,
+			"name": "CHANGELOG",
+			"variant": "document",
+			"kind": 8388608,
+			"flags": {},
+			"content": [],
+			"frontmatter": {}
+		}
+	],
+	"childrenIncludingDocuments": [
+		1,
+		2
+	],
+	"groups": [
+		{
+			"title": "Documents",
+			"children": [
+				1
+			]
+		},
+		{
+			"title": "Modules",
+			"children": [
+				2
+			]
+		}
+	],
+	"packageName": "@xernerx/websocket",
+	"packageVersion": "0.4.8",
+	"readme": [
+		{
+			"kind": "text",
+			"text": "<!-- @format -->\n\ne"
+		}
+	],
+	"symbolIdMap": {
+		"2": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": ""
+		},
+		"3": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "XernerxWebsocket"
+		},
+		"4": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "XernerxWebsocket.__constructor"
+		},
+		"5": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "XernerxWebsocket"
+		},
+		"6": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "__0"
+		},
+		"7": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "__type"
+		},
+		"8": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "__type.token"
+		},
+		"9": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "__type.url"
+		},
+		"12": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "XernerxWebsocket.token"
+		},
+		"17": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "XernerxWebsocket.connect"
+		},
+		"18": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "XernerxWebsocket.connect"
+		},
+		"25": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "XernerxWebsocket.get"
+		},
+		"26": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "XernerxWebsocket.get"
+		},
+		"27": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "service"
+		},
+		"28": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "action"
+		},
+		"29": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "body"
+		},
+		"30": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "XernerxWebsocket.create"
+		},
+		"31": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "XernerxWebsocket.create"
+		},
+		"32": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "service"
+		},
+		"33": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "action"
+		},
+		"34": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "body"
+		},
+		"35": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "XernerxWebsocket.update"
+		},
+		"36": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "XernerxWebsocket.update"
+		},
+		"37": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "service"
+		},
+		"38": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "action"
+		},
+		"39": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "body"
+		},
+		"40": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "XernerxWebsocket.delete"
+		},
+		"41": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "XernerxWebsocket.delete"
+		},
+		"42": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "service"
+		},
+		"43": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "action"
+		},
+		"44": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "body"
+		},
+		"45": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "XernerxWebsocket.disconnect"
+		},
+		"46": {
+			"packageName": "@xernerx/websocket",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "XernerxWebsocket.disconnect"
+		}
+	},
+	"files": {
+		"entries": {
+			"1": "documents/CHANGELOG.md",
+			"2": "src/main.ts",
+			"3": "README.md",
+			"4": ""
+		},
+		"reflections": {
+			"1": 1,
+			"2": 2,
+			"3": 0,
+			"4": 0
+		}
+	}
+}
