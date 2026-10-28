@@ -1,0 +1,242 @@
+<!DOCTYPE html><html class="default" lang="en" data-base="./"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>Xernerx Commands - v0.2.4</title><meta name="description" content="Documentation for Xernerx Commands"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script defer src="assets/main.js"></script><script async src="assets/icons.js" id="tsd-icons-script"></script><script async src="assets/search.js" id="tsd-search-script"></script><script async src="assets/navigation.js" id="tsd-nav-script"></script><script async src="assets/hierarchy.js" id="tsd-hierarchy-script"></script><link rel="stylesheet" href="assets/typedoc-github-style.css"/></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => window.app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container"><a href="index.html" class="title">Xernerx Commands - v0.2.4</a>
+<div id="tsd-toolbar-links"></div><button id="tsd-search-trigger" class="tsd-widget" aria-label="Search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-search"></use></svg></button><dialog id="tsd-search" aria-label="Search"><input role="combobox" id="tsd-search-input" aria-controls="tsd-search-results" aria-autocomplete="list" aria-expanded="true" autocapitalize="off" autocomplete="off" placeholder="Search the docs" maxLength="100"/>
+<ul role="listbox" id="tsd-search-results"></ul>
+<div id="tsd-search-status" aria-live="polite" aria-atomic="true">
+<div>Preparing search index...</div></div></dialog><a href="#" class="tsd-widget menu" id="tsd-toolbar-menu-trigger" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></header>
+<div class="container container-main">
+<div class="col-content">
+<div class="tsd-page-title">
+<h1>Xernerx Commands - v0.2.4</h1></div>
+<div class="tsd-panel tsd-typography"><!-- @format -->
+<h1 id="xernerxcommands" class="tsd-anchor-link">@xernerx/commands<a href="#xernerxcommands" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<p>Xernerx Commands is an extension for <code>@xernerx/framework</code> containing developer utility commands (<code>xc!</code>, <code>evaluate</code>, <code>ping</code>, <code>shell</code>, <code>transpile</code>, <code>haste</code>, <code>documentation</code>) and the official SDK to sync and manage Discord bot commands on <code>https://api.xernerx.com/v1/bots/:id/commands</code>.</p>
+<h2 id="install" class="tsd-anchor-link">Install<a href="#install" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<pre><code class="bash"><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">add</span><span class="hl-1"> </span><span class="hl-2">@xernerx/commands</span>
+</code><button type="button">Copy</button></pre>
+
+<h2 id="usage-with" class="tsd-anchor-link">Usage with <code>@xernerx/framework</code><a href="#usage-with" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> { </span><span class="hl-4">XernerxClient</span><span class="hl-1"> } </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@xernerx/framework&#39;</span><span class="hl-1">;</span><br/><span class="hl-3">import</span><span class="hl-1"> { </span><span class="hl-4">XernerxCommands</span><span class="hl-1"> } </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@xernerx/commands&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">client</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">XernerxClient</span><span class="hl-1">({</span><br/><span class="hl-1">	</span><span class="hl-4">intents:</span><span class="hl-1"> [</span><span class="hl-2">&#39;Guilds&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;GuildMessages&#39;</span><span class="hl-1">, </span><span class="hl-2">&#39;MessageContent&#39;</span><span class="hl-1">],</span><br/><span class="hl-1">	</span><span class="hl-4">token:</span><span class="hl-1"> </span><span class="hl-4">process</span><span class="hl-1">.</span><span class="hl-4">env</span><span class="hl-1">.</span><span class="hl-6">DISCORD_BOT_TOKEN</span><span class="hl-1">!,</span><br/><span class="hl-1">	</span><span class="hl-4">owners:</span><span class="hl-1"> [</span><span class="hl-2">&#39;YOUR_USER_ID&#39;</span><span class="hl-1">],</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-7">// Register developer message commands and automatically sync slash/context command bodies to the Xernerx Suite API</span><br/><span class="hl-4">client</span><span class="hl-1">.</span><span class="hl-4">modules</span><span class="hl-1">.</span><span class="hl-4">extensionHandler</span><span class="hl-1">.</span><span class="hl-0">loadExtensions</span><span class="hl-1">(</span><br/><span class="hl-1">	</span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">XernerxCommands</span><span class="hl-1">(</span><span class="hl-4">client</span><span class="hl-1">, {</span><br/><span class="hl-1">		</span><span class="hl-4">token:</span><span class="hl-1"> </span><span class="hl-4">process</span><span class="hl-1">.</span><span class="hl-4">env</span><span class="hl-1">.</span><span class="hl-6">XERNERX_TOKEN</span><span class="hl-1">!,</span><br/><span class="hl-1">		</span><span class="hl-4">prefix:</span><span class="hl-1"> </span><span class="hl-2">&#39;xc!&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">		</span><span class="hl-4">useEmbeds:</span><span class="hl-1"> </span><span class="hl-5">true</span><span class="hl-1">,</span><br/><span class="hl-1">	})</span><br/><span class="hl-1">);</span>
+</code><button type="button">Copy</button></pre>
+
+<h2 id="standalone-api-client-" class="tsd-anchor-link">Standalone API Client (<code>CommandsClient</code>)<a href="#standalone-api-client-" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> { </span><span class="hl-4">CommandsClient</span><span class="hl-1"> } </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@xernerx/commands&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">commands</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">CommandsClient</span><span class="hl-1">({</span><br/><span class="hl-1">	</span><span class="hl-4">botId:</span><span class="hl-1"> </span><span class="hl-2">&#39;YOUR_BOT_ID&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">	</span><span class="hl-4">token:</span><span class="hl-1"> </span><span class="hl-4">process</span><span class="hl-1">.</span><span class="hl-4">env</span><span class="hl-1">.</span><span class="hl-6">XERNERX_API_TOKEN</span><span class="hl-1">!,</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-7">// Sync / post commands body to Xernerx Suite API</span><br/><span class="hl-3">await</span><span class="hl-1"> </span><span class="hl-4">commands</span><span class="hl-1">.</span><span class="hl-0">postCommands</span><span class="hl-1">([</span><br/><span class="hl-1">	{</span><br/><span class="hl-1">		</span><span class="hl-4">name:</span><span class="hl-1"> </span><span class="hl-2">&#39;ping&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">		</span><span class="hl-4">description:</span><span class="hl-1"> </span><span class="hl-2">&#39;Replies with Pong!&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">		</span><span class="hl-4">type:</span><span class="hl-1"> </span><span class="hl-8">1</span><span class="hl-1">,</span><br/><span class="hl-1">	},</span><br/><span class="hl-1">]);</span><br/><br/><span class="hl-7">// Fetch commands from Xernerx Suite API</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">currentCommands</span><span class="hl-1"> = </span><span class="hl-3">await</span><span class="hl-1"> </span><span class="hl-4">commands</span><span class="hl-1">.</span><span class="hl-0">getCommands</span><span class="hl-1">();</span><br/><br/><span class="hl-7">// Delete a specific command or clear all commands</span><br/><span class="hl-3">await</span><span class="hl-1"> </span><span class="hl-4">commands</span><span class="hl-1">.</span><span class="hl-0">deleteCommands</span><span class="hl-1">(</span><span class="hl-2">&#39;ping&#39;</span><span class="hl-1">);</span><br/><span class="hl-3">await</span><span class="hl-1"> </span><span class="hl-4">commands</span><span class="hl-1">.</span><span class="hl-0">clearCommands</span><span class="hl-1">();</span>
+</code><button type="button">Copy</button></pre>
+
+<h2 id="options" class="tsd-anchor-link">Options<a href="#options" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>token</td>
+<td>string</td>
+<td><code>&quot;&quot;</code></td>
+<td>false</td>
+<td>Xernerx Suite API token to automatically post/sync commands body on startup.</td>
+</tr>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>auto</td>
+<td>false</td>
+<td>Custom Xernerx Suite API base URL (<code>https://api.xernerx.com</code> by default).</td>
+</tr>
+<tr>
+<td>dev</td>
+<td>boolean</td>
+<td><code>false</code></td>
+<td>false</td>
+<td>Use local development API URL (<code>http://localhost:4001</code>).</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>number</td>
+<td>—</td>
+<td>false</td>
+<td>Optional interval in ms to periodically re-sync commands body.</td>
+</tr>
+<tr>
+<td>include</td>
+<td>Array&lt;CommandName&gt; | null</td>
+<td><code>null</code></td>
+<td>false</td>
+<td>Only load the specified built-in developer commands.</td>
+</tr>
+<tr>
+<td>exclude</td>
+<td>Array&lt;CommandName&gt; | null</td>
+<td><code>null</code></td>
+<td>false</td>
+<td>Exclude the specified built-in developer commands.</td>
+</tr>
+<tr>
+<td>prefix</td>
+<td>Array&lt;string&gt; | string | null</td>
+<td><code>'xc!'</code></td>
+<td>false</td>
+<td>Prefix(es) for the built-in developer message commands.</td>
+</tr>
+<tr>
+<td>useEmbeds</td>
+<td>boolean</td>
+<td><code>true</code></td>
+<td>false</td>
+<td>Whether command responses should use Discord embeds when permitted.</td>
+</tr>
+<tr>
+<td>registerCommands</td>
+<td>boolean</td>
+<td><code>true</code></td>
+<td>false</td>
+<td>Whether to register the built-in developer message commands on the client.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="built-in-developer-commands-jishaku-inspired" class="tsd-anchor-link">Built-in Developer Commands (Jishaku / <code>jsk</code> Inspired)<a href="#built-in-developer-commands-jishaku-inspired" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Aliases</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xc!</td>
+<td>jsk, jishaku, status</td>
+<td>Displays bot, process memory/PID, shard, cache, intent, and framework runtime information.</td>
+</tr>
+<tr>
+<td>evaluate</td>
+<td>eval, ev, js, ts, py</td>
+<td>Evaluates JS/TS code with <code>_</code>, <code>message</code>, <code>client</code>, <code>guild</code>, <code>channel</code>, <code>Discord</code> in scope.</td>
+</tr>
+<tr>
+<td>shell</td>
+<td>sh</td>
+<td>Executes a shell command and returns stdout/stderr.</td>
+</tr>
+<tr>
+<td>git</td>
+<td></td>
+<td>Shortcut for running <code>git</code> commands in the workspace shell (<code>jsk git</code>).</td>
+</tr>
+<tr>
+<td>source</td>
+<td>src</td>
+<td>Displays the source code of a registered bot command or JS expression (<code>jsk source</code>).</td>
+</tr>
+<tr>
+<td>haste</td>
+<td>cat, tree</td>
+<td>Lists directory trees or reads/uploads file source to a Hastebin service (<code>jsk cat</code>).</td>
+</tr>
+<tr>
+<td>ping</td>
+<td>rtt</td>
+<td>Displays WebSocket, API, and round-trip latency (<code>jsk rtt</code>).</td>
+</tr>
+<tr>
+<td>debug</td>
+<td>dbg</td>
+<td>Executes a command, timing its duration (<code>ms</code>) and catching thrown stack traces (<code>jsk dbg</code>).</td>
+</tr>
+<tr>
+<td>repeat</td>
+<td></td>
+<td>Repeats a command <code>&lt;count&gt;</code> times sequentially (<code>jsk repeat</code>).</td>
+</tr>
+<tr>
+<td>su</td>
+<td>sudo, in</td>
+<td>Runs a command as another user (<code>su</code>), in another channel (<code>in</code>), or via <code>sudo</code>.</td>
+</tr>
+<tr>
+<td>transpile</td>
+<td>t, tr</td>
+<td>Pipes code into a specified language/engine runtime.</td>
+</tr>
+<tr>
+<td>documentation</td>
+<td>docs</td>
+<td>Queries the Xernerx Developer Documentation catalog.</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+<div class="col-sidebar">
+<div class="page-menu">
+<div class="tsd-navigation settings">
+<details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg>
+<h3>Settings</h3></summary>
+<div class="tsd-accordion-details">
+<div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span>
+<ul id="tsd-filter-options">
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-alpha" name="alpha"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Alpha</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-beta" name="beta"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Beta</span></label></li></ul></div>
+<div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
+<details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg>
+<h3>On This Page</h3></summary>
+<div class="tsd-accordion-details"><a href="#xernerxcommands"><span>@xernerx/commands</span></a>
+<ul>
+<li><a href="#install"><span>Install</span></a></li>
+<li><a href="#usage-with"><span>Usage with </span></a></li>
+<li><a href="#standalone-api-client-"><span>Standalone <wbr/>API <wbr/>Client ()</span></a></li>
+<li><a href="#options"><span>Options</span></a></li>
+<li><a href="#built-in-developer-commands-jishaku-inspired"><span>Built-<wbr/>in <wbr/>Developer <wbr/>Commands (<wbr/>Jishaku /  <wbr/>Inspired)</span></a></li></ul></div></details></div>
+<div class="site-menu">
+<nav class="tsd-navigation"><a href="modules.html">Xernerx Commands - v0.2.4</a>
+<ul class="tsd-small-nested-navigation" id="tsd-nav-container">
+<li>Loading...</li></ul></nav></div></div></div><footer>
+<p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a> with <a href="https://github.com/JulianWowra/typedoc-github-theme" target="_blank">typedoc-github-theme</a><br>
+            <span id="generation-date"></span>
+            <script>
+                window.GENERATION_DATE = 1793209140165;
+
+                (() => {
+                    
+        const formatter = new Intl.RelativeTimeFormat('en', {
+            numeric: 'auto',
+            style: 'short',
+        });
+
+        const divisions = [
+            { amount: 60, name: 'seconds' },
+            { amount: 60, name: 'minutes' },
+            { amount: 24, name: 'hours' },
+            { amount: 7, name: 'days' },
+            { amount: 4.34524, name: 'weeks' },
+            { amount: 12, name: 'months' },
+            { amount: Number.POSITIVE_INFINITY, name: 'years' }
+        ];
+
+        function formatTimeAgo(date) {
+            let duration = (date - new Date()) / 1000;
+            
+            for (const division of divisions) {
+                if (Math.abs(duration) < division.amount) {
+                    return formatter.format(Math.round(duration), division.name);
+                }
+                duration /= division.amount;
+            }
+        }
+
+        document.getElementById('generation-date').title = new Date(window.GENERATION_DATE).toLocaleString();
+        document.getElementById('generation-date').innerText = `Last modified ${formatTimeAgo(window.GENERATION_DATE)}`;
+    
+                })();
+            </script>
+        </p></footer>
+<div class="overlay"></div></body></html>
