@@ -1,0 +1,266 @@
+<!DOCTYPE html><html class="default" lang="en" data-base="./"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>Xernerx Stats - v1.0.14</title><meta name="description" content="Documentation for Xernerx Stats"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script defer src="assets/main.js"></script><script async src="assets/icons.js" id="tsd-icons-script"></script><script async src="assets/search.js" id="tsd-search-script"></script><script async src="assets/navigation.js" id="tsd-nav-script"></script><script async src="assets/hierarchy.js" id="tsd-hierarchy-script"></script><link rel="stylesheet" href="assets/typedoc-github-style.css"/></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => window.app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container"><a href="index.html" class="title">Xernerx Stats - v1.0.14</a>
+<div id="tsd-toolbar-links"></div><button id="tsd-search-trigger" class="tsd-widget" aria-label="Search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-search"></use></svg></button><dialog id="tsd-search" aria-label="Search"><input role="combobox" id="tsd-search-input" aria-controls="tsd-search-results" aria-autocomplete="list" aria-expanded="true" autocapitalize="off" autocomplete="off" placeholder="Search the docs" maxLength="100"/>
+<ul role="listbox" id="tsd-search-results"></ul>
+<div id="tsd-search-status" aria-live="polite" aria-atomic="true">
+<div>Preparing search index...</div></div></dialog><a href="#" class="tsd-widget menu" id="tsd-toolbar-menu-trigger" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></header>
+<div class="container container-main">
+<div class="col-content">
+<div class="tsd-page-title">
+<h1>Xernerx Stats - v1.0.14</h1></div>
+<div class="tsd-panel tsd-typography"><!-- @format -->
+<p><img src="https://xernerx.com/banner.png" alt="Xernerx Banner"></p>
+<h1 id="xernerxstats" class="tsd-anchor-link">@xernerx/stats<a href="#xernerxstats" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<p>The official <strong>Xernerx Suite Telemetry &amp; Stats SDK</strong> (<code>@xernerx/stats</code>) to automatically report, query, update, and manage Discord bot telemetry on <code>https://api.xernerx.com/v1/bots/:id/stats</code>.</p>
+<hr>
+<h2 id="features" class="tsd-anchor-link">Features<a href="#features" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<ul>
+<li><strong>Automatic <code>@xernerx/framework</code> Extension (<code>XernerxStats</code>)</strong>: Waits until all shards/clusters report their metrics, posts an initial telemetry snapshot, and syncs on a configurable interval (<code>30</code> minutes by default).</li>
+<li><strong>Standalone REST Client (<code>StatsClient</code>)</strong>: Full class-based CRUD client (<code>this.get()</code>, <code>this.post()</code>, <code>this.update()</code>, <code>this.delete()</code>) for managing telemetry records without requiring <code>discord.js</code>.</li>
+<li><strong>Hybrid Sharding Support</strong>: Automatically aggregates <code>guildCount</code>, <code>userCount</code>, <code>shardCount</code>, and per-shard <code>ShardStats</code> breakdowns from <code>XernerxClient</code> and <code>XernerxShardClient</code>.</li>
+<li><strong>Direct Helper Function (<code>post</code>)</strong>: Lightweight zero-state helper for one-off telemetry submissions in serverless or custom pipelines.</li>
+<li><strong>Scoped CLI Logging</strong>: Built-in <code>@xernerx/terminal</code> integration under the <code>XS</code> scope.</li>
+</ul>
+<hr>
+<h2 id="install" class="tsd-anchor-link">Install<a href="#install" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<pre><code class="bash"><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">add</span><span class="hl-1"> </span><span class="hl-2">@xernerx/stats</span>
+</code><button type="button">Copy</button></pre>
+
+<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-2">@xernerx/stats</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="setup" class="tsd-anchor-link">Setup<a href="#setup" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>Extend <code>XernerxClient</code> and register <code>XernerxStats</code> via <code>extensionHandler</code>:</p>
+<pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> { </span><span class="hl-4">XernerxClient</span><span class="hl-1"> } </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@xernerx/framework&#39;</span><span class="hl-1">;</span><br/><span class="hl-3">import</span><span class="hl-1"> { </span><span class="hl-4">XernerxStats</span><span class="hl-1"> } </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@xernerx/stats&#39;</span><span class="hl-1">;</span><br/><span class="hl-3">import</span><span class="hl-1"> { </span><span class="hl-4">Terminal</span><span class="hl-1"> } </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@xernerx/terminal&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-3">export</span><span class="hl-1"> </span><span class="hl-5">class</span><span class="hl-1"> </span><span class="hl-6">Client</span><span class="hl-1"> </span><span class="hl-5">extends</span><span class="hl-1"> </span><span class="hl-6">XernerxClient</span><span class="hl-1"> {</span><br/><span class="hl-1">	</span><span class="hl-5">private</span><span class="hl-1"> </span><span class="hl-5">readonly</span><span class="hl-1"> </span><span class="hl-4">logger</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Terminal</span><span class="hl-1">({ </span><span class="hl-4">scope:</span><span class="hl-1"> </span><span class="hl-2">&#39;XS&#39;</span><span class="hl-1"> });</span><br/><br/><span class="hl-1">	</span><span class="hl-5">constructor</span><span class="hl-1">() {</span><br/><span class="hl-1">		</span><span class="hl-5">super</span><span class="hl-1">({</span><br/><span class="hl-1">			</span><span class="hl-4">intents:</span><span class="hl-1"> [</span><span class="hl-2">&#39;Guilds&#39;</span><span class="hl-1">],</span><br/><span class="hl-1">			</span><span class="hl-4">token:</span><span class="hl-1"> </span><span class="hl-4">process</span><span class="hl-1">.</span><span class="hl-4">env</span><span class="hl-1">.</span><span class="hl-7">DISCORD_BOT_TOKEN</span><span class="hl-1">!,</span><br/><span class="hl-1">		});</span><br/><br/><span class="hl-1">		</span><span class="hl-5">this</span><span class="hl-1">.</span><span class="hl-4">modules</span><span class="hl-1">.</span><span class="hl-4">extensionHandler</span><span class="hl-1">.</span><span class="hl-0">loadExtensions</span><span class="hl-1">(</span><br/><span class="hl-1">			</span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">XernerxStats</span><span class="hl-1">(</span><span class="hl-5">this</span><span class="hl-1">, {</span><br/><span class="hl-1">				</span><span class="hl-4">token:</span><span class="hl-1"> </span><span class="hl-4">process</span><span class="hl-1">.</span><span class="hl-4">env</span><span class="hl-1">.</span><span class="hl-7">XERNERX_TOKEN</span><span class="hl-1">!,</span><br/><span class="hl-1">				</span><span class="hl-4">interval:</span><span class="hl-1"> </span><span class="hl-8">30</span><span class="hl-1"> * </span><span class="hl-8">60_000</span><span class="hl-1">, </span><span class="hl-9">// Every 30 minutes (default)</span><br/><span class="hl-1">			})</span><br/><span class="hl-1">		);</span><br/><br/><span class="hl-1">		</span><span class="hl-5">this</span><span class="hl-1">.</span><span class="hl-0">connect</span><span class="hl-1">();</span><br/><span class="hl-1">		</span><span class="hl-5">this</span><span class="hl-1">.</span><span class="hl-4">logger</span><span class="hl-1">.</span><span class="hl-0">info</span><span class="hl-1">(</span><span class="hl-2">&#39;Initialized bot client with XernerxStats telemetry.&#39;</span><span class="hl-1">);</span><br/><span class="hl-1">	}</span><br/><span class="hl-1">}</span><br/><br/><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Client</span><span class="hl-1">();</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="standalone-rest-client-" class="tsd-anchor-link">Standalone REST Client (<code>StatsClient</code>)<a href="#standalone-rest-client-" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>Extend <code>StatsClient</code> to post, query, update, and delete telemetry records on the Xernerx Suite API:</p>
+<pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> { </span><span class="hl-4">StatsClient</span><span class="hl-1"> } </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@xernerx/stats&#39;</span><span class="hl-1">;</span><br/><span class="hl-3">import</span><span class="hl-1"> { </span><span class="hl-4">Terminal</span><span class="hl-1"> } </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@xernerx/terminal&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-3">export</span><span class="hl-1"> </span><span class="hl-5">class</span><span class="hl-1"> </span><span class="hl-6">Stats</span><span class="hl-1"> </span><span class="hl-5">extends</span><span class="hl-1"> </span><span class="hl-6">StatsClient</span><span class="hl-1"> {</span><br/><span class="hl-1">	</span><span class="hl-5">private</span><span class="hl-1"> </span><span class="hl-5">readonly</span><span class="hl-1"> </span><span class="hl-4">console</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Terminal</span><span class="hl-1">({ </span><span class="hl-4">scope:</span><span class="hl-1"> </span><span class="hl-2">&#39;XS&#39;</span><span class="hl-1"> });</span><br/><br/><span class="hl-1">	</span><span class="hl-5">constructor</span><span class="hl-1">() {</span><br/><span class="hl-1">		</span><span class="hl-5">super</span><span class="hl-1">({</span><br/><span class="hl-1">			</span><span class="hl-4">botId:</span><span class="hl-1"> </span><span class="hl-2">&#39;YOUR_BOT_ID&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">			</span><span class="hl-4">token:</span><span class="hl-1"> </span><span class="hl-4">process</span><span class="hl-1">.</span><span class="hl-4">env</span><span class="hl-1">.</span><span class="hl-7">XERNERX_API_TOKEN</span><span class="hl-1">!,</span><br/><span class="hl-1">		});</span><br/><span class="hl-1">	}</span><br/><br/><span class="hl-1">	</span><span class="hl-5">async</span><span class="hl-1"> </span><span class="hl-0">run</span><span class="hl-1">() {</span><br/><span class="hl-1">		</span><span class="hl-9">// Post a new telemetry snapshot</span><br/><span class="hl-1">		</span><span class="hl-3">await</span><span class="hl-1"> </span><span class="hl-5">this</span><span class="hl-1">.</span><span class="hl-0">post</span><span class="hl-1">({</span><br/><span class="hl-1">			</span><span class="hl-4">guildCount:</span><span class="hl-1"> </span><span class="hl-8">1500</span><span class="hl-1">,</span><br/><span class="hl-1">			</span><span class="hl-4">shardCount:</span><span class="hl-1"> </span><span class="hl-8">2</span><span class="hl-1">,</span><br/><span class="hl-1">			</span><span class="hl-4">userCount:</span><span class="hl-1"> </span><span class="hl-8">450000</span><span class="hl-1">,</span><br/><span class="hl-1">			</span><span class="hl-4">onlineSince:</span><span class="hl-1"> </span><span class="hl-4">Date</span><span class="hl-1">.</span><span class="hl-0">now</span><span class="hl-1">(),</span><br/><span class="hl-1">		});</span><br/><br/><span class="hl-1">		</span><span class="hl-9">// Fetch historical telemetry snapshots</span><br/><span class="hl-1">		</span><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-7">history</span><span class="hl-1"> = </span><span class="hl-3">await</span><span class="hl-1"> </span><span class="hl-5">this</span><span class="hl-1">.</span><span class="hl-0">get</span><span class="hl-1">();</span><br/><span class="hl-1">		</span><span class="hl-5">this</span><span class="hl-1">.</span><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">info</span><span class="hl-1">(</span><span class="hl-2">`Fetched </span><span class="hl-5">${</span><span class="hl-4">history</span><span class="hl-10">.</span><span class="hl-4">length</span><span class="hl-5">}</span><span class="hl-2"> telemetry entries.`</span><span class="hl-1">);</span><br/><br/><span class="hl-1">		</span><span class="hl-9">// Update the latest telemetry entry (or pass a specific statId as the first argument)</span><br/><span class="hl-1">		</span><span class="hl-3">await</span><span class="hl-1"> </span><span class="hl-5">this</span><span class="hl-1">.</span><span class="hl-0">update</span><span class="hl-1">({ </span><span class="hl-4">guildCount:</span><span class="hl-1"> </span><span class="hl-8">1550</span><span class="hl-1"> });</span><br/><span class="hl-1">		</span><span class="hl-3">await</span><span class="hl-1"> </span><span class="hl-5">this</span><span class="hl-1">.</span><span class="hl-0">update</span><span class="hl-1">(</span><span class="hl-2">&#39;STAT_ENTRY_ID&#39;</span><span class="hl-1">, { </span><span class="hl-4">guildCount:</span><span class="hl-1"> </span><span class="hl-8">1550</span><span class="hl-1"> });</span><br/><br/><span class="hl-1">		</span><span class="hl-9">// Delete a specific telemetry entry (or omit statId to clear history)</span><br/><span class="hl-1">		</span><span class="hl-3">await</span><span class="hl-1"> </span><span class="hl-5">this</span><span class="hl-1">.</span><span class="hl-0">delete</span><span class="hl-1">(</span><span class="hl-2">&#39;STAT_ENTRY_ID&#39;</span><span class="hl-1">);</span><br/><span class="hl-1">	}</span><br/><span class="hl-1">}</span><br/><br/><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">Stats</span><span class="hl-1">().</span><span class="hl-0">run</span><span class="hl-1">();</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="direct-function-" class="tsd-anchor-link">Direct Function (<code>post</code>)<a href="#direct-function-" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>For custom pipelines, call <code>post(data, token, baseUrl?)</code> directly:</p>
+<pre><code class="ts"><span class="hl-3">import</span><span class="hl-1"> { </span><span class="hl-4">post</span><span class="hl-1"> } </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@xernerx/stats&#39;</span><span class="hl-1">;</span><br/><span class="hl-3">import</span><span class="hl-1"> { </span><span class="hl-4">Terminal</span><span class="hl-1"> } </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@xernerx/terminal&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-3">export</span><span class="hl-1"> </span><span class="hl-5">class</span><span class="hl-1"> </span><span class="hl-6">TelemetryPoster</span><span class="hl-1"> </span><span class="hl-5">extends</span><span class="hl-1"> </span><span class="hl-6">Terminal</span><span class="hl-1"> {</span><br/><span class="hl-1">	</span><span class="hl-5">constructor</span><span class="hl-1">() {</span><br/><span class="hl-1">		</span><span class="hl-5">super</span><span class="hl-1">({ </span><span class="hl-4">scope:</span><span class="hl-1"> </span><span class="hl-2">&#39;XS&#39;</span><span class="hl-1"> });</span><br/><span class="hl-1">	}</span><br/><br/><span class="hl-1">	</span><span class="hl-5">async</span><span class="hl-1"> </span><span class="hl-0">run</span><span class="hl-1">() {</span><br/><span class="hl-1">		</span><span class="hl-3">await</span><span class="hl-1"> </span><span class="hl-0">post</span><span class="hl-1">(</span><br/><span class="hl-1">			{</span><br/><span class="hl-1">				</span><span class="hl-4">id:</span><span class="hl-1"> </span><span class="hl-2">&#39;YOUR_BOT_ID&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">				</span><span class="hl-4">guildCount:</span><span class="hl-1"> </span><span class="hl-8">1500</span><span class="hl-1">,</span><br/><span class="hl-1">				</span><span class="hl-4">userCount:</span><span class="hl-1"> </span><span class="hl-8">450000</span><span class="hl-1">,</span><br/><span class="hl-1">				</span><span class="hl-4">shardCount:</span><span class="hl-1"> </span><span class="hl-8">2</span><span class="hl-1">,</span><br/><span class="hl-1">			},</span><br/><span class="hl-1">			</span><span class="hl-4">process</span><span class="hl-1">.</span><span class="hl-4">env</span><span class="hl-1">.</span><span class="hl-7">XERNERX_API_TOKEN</span><span class="hl-1">!</span><br/><span class="hl-1">		);</span><br/><br/><span class="hl-1">		</span><span class="hl-5">this</span><span class="hl-1">.</span><span class="hl-0">info</span><span class="hl-1">(</span><span class="hl-2">&#39;Posted telemetry snapshot.&#39;</span><span class="hl-1">);</span><br/><span class="hl-1">	}</span><br/><span class="hl-1">}</span><br/><br/><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-0">TelemetryPoster</span><span class="hl-1">().</span><span class="hl-0">run</span><span class="hl-1">();</span>
+</code><button type="button">Copy</button></pre>
+
+<hr>
+<h2 id="options-" class="tsd-anchor-link">Options (<code>XernerxStatsSettings</code> &amp; <code>StatsClientOptions</code>)<a href="#options-" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>token</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td><strong>Yes</strong></td>
+<td>Xernerx Suite API bearer token (<code>Bearer &lt;token&gt;</code>).</td>
+</tr>
+<tr>
+<td><code>botId</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td><code>StatsClient</code></td>
+<td>Discord bot snowflake ID to manage telemetry for.</td>
+</tr>
+<tr>
+<td><code>interval</code></td>
+<td><code>number</code></td>
+<td><code>1800000</code> (30m)</td>
+<td>No</td>
+<td>Interval in milliseconds between automatic telemetry posts in <code>XernerxStats</code>.</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td><code>string</code></td>
+<td><code>'https://api.xernerx.com'</code></td>
+<td>No</td>
+<td>Custom Xernerx Suite API base URL.</td>
+</tr>
+<tr>
+<td><code>dev</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>No</td>
+<td>Connect to the local development API (<code>http://localhost:4001</code>).</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="methods" class="tsd-anchor-link"><code>StatsClient</code> Methods<a href="#methods" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Return Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>this.get(botId?)</code></td>
+<td><code>Promise&lt;StatRecord[]&gt;</code></td>
+<td>Fetches historical telemetry records from <code>GET /v1/bots/:id/stats</code>.</td>
+</tr>
+<tr>
+<td><code>this.post(data, botId?)</code></td>
+<td><code>Promise&lt;any&gt;</code></td>
+<td>Posts a new telemetry snapshot (<code>StatsPayload</code>) to <code>POST /v1/bots/:id/stats</code>.</td>
+</tr>
+<tr>
+<td><code>this.update(statIdOrData, data?, botId?)</code></td>
+<td><code>Promise&lt;any&gt;</code></td>
+<td>Updates the latest telemetry snapshot or a specific <code>statId</code> via <code>PATCH /v1/bots/:id/stats</code>.</td>
+</tr>
+<tr>
+<td><code>this.delete(statId?, botId?)</code></td>
+<td><code>Promise&lt;any&gt;</code></td>
+<td>Deletes a specific <code>statId</code> snapshot or clears telemetry history via <code>DELETE /v1/bots/:id/stats</code>.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="documentation-api-reference" class="tsd-anchor-link">Documentation &amp; API Reference<a href="#documentation-api-reference" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>Full documentation and interactive API references are available on the <strong><a href="https://docs.xernerx.com">Xernerx Documentation</a></strong> and the <strong><a href="https://docs.xernerx.com/packages/@xernerx/stats"><code>@xernerx/stats</code> Package Reference</a></strong>.</p>
+<h3 id="package-symbols-" class="tsd-anchor-link">Package Symbols (<code>@xernerx/stats</code>)<a href="#package-symbols-" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li><strong>Classes</strong>:
+<ul>
+<li><a href="https://docs.xernerx.com/packages/@xernerx/stats#class-XernerxStats"><code>XernerxStats</code></a> — Automatic telemetry extension for <code>XernerxClient</code> and <code>XernerxShardClient</code>.</li>
+<li><a href="https://docs.xernerx.com/packages/@xernerx/stats#class-StatsClient"><code>StatsClient</code></a> — Standalone REST client for <code>GET</code>, <code>POST</code>, <code>PATCH</code>, and <code>DELETE</code> telemetry operations.</li>
+<li><a href="https://docs.xernerx.com/packages/@xernerx/stats#class-BaseClient"><code>BaseClient</code></a> — Base authenticated HTTP client for the Xernerx Suite API.</li>
+</ul>
+</li>
+<li><strong>Interfaces</strong>:
+<ul>
+<li><a href="https://docs.xernerx.com/packages/@xernerx/stats#interface-XernerxStatsSettings"><code>XernerxStatsSettings</code></a> — Configuration options for <code>XernerxStats</code>.</li>
+<li><a href="https://docs.xernerx.com/packages/@xernerx/stats#interface-StatsClientOptions"><code>StatsClientOptions</code></a> — Configuration options for <code>StatsClient</code>.</li>
+<li><a href="https://docs.xernerx.com/packages/@xernerx/stats#interface-BaseClientOptions"><code>BaseClientOptions</code></a> — Base URL and development mode options.</li>
+<li><a href="https://docs.xernerx.com/packages/@xernerx/stats#interface-StatRecord"><code>StatRecord</code></a> — Historical telemetry snapshot returned by <code>this.get()</code>.</li>
+<li><a href="https://docs.xernerx.com/packages/@xernerx/stats#interface-StatsPayload"><code>StatsPayload</code></a> — Telemetry payload structure (<code>guildCount</code>, <code>serverCount</code>, <code>userCount</code>, <code>shardCount</code>, <code>voteCount</code>, <code>onlineSince</code>, <code>shards</code>).</li>
+<li><a href="https://docs.xernerx.com/packages/@xernerx/stats#interface-ShardStats"><code>ShardStats</code></a> — Per-shard telemetry breakdown (<code>shardId</code>, <code>onlineSince</code>, <code>userCount</code>, <code>guildCount</code>).</li>
+</ul>
+</li>
+<li><strong>Functions</strong>:
+<ul>
+<li><a href="https://docs.xernerx.com/packages/@xernerx/stats#function-post"><code>post()</code></a> — Direct <code>POST /v1/bots/:id/stats</code> helper function.</li>
+</ul>
+</li>
+</ul>
+<h3 id="rest-api-v1-endpoints" class="tsd-anchor-link">REST API v1 Endpoints<a href="#rest-api-v1-endpoints" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li><a href="https://docs.xernerx.com/api/v1#overview">API Overview</a></li>
+<li><a href="https://docs.xernerx.com/api/v1#authentication">Bearer Token Authentication</a></li>
+<li><a href="https://docs.xernerx.com/api/v1#fetch-bot-stats">Fetch Bot Stats (<code>GET /v1/bots/:id/stats</code>)</a></li>
+<li><a href="https://docs.xernerx.com/api/v1#post-bot-stats">Post Bot Stats (<code>POST /v1/bots/:id/stats</code>)</a></li>
+<li><a href="https://docs.xernerx.com/api/v1#update-bot-stats">Update Bot Stats (<code>PATCH /v1/bots/:id/stats</code>)</a></li>
+<li><a href="https://docs.xernerx.com/api/v1#delete-bot-stats">Delete Bot Stats (<code>DELETE /v1/bots/:id/stats</code>)</a></li>
+</ul>
+<h3 id="ecosystem-links" class="tsd-anchor-link">Ecosystem Links<a href="#ecosystem-links" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li><a href="https://docs.xernerx.com">Xernerx Documentation Home</a></li>
+<li><a href="https://docs.xernerx.com/packages">All Xernerx Packages</a></li>
+<li><a href="https://docs.xernerx.com/packages/xernerx"><code>xernerx</code> Collection</a></li>
+<li><a href="https://docs.xernerx.com/packages/@xernerx/framework"><code>@xernerx/framework</code> Documentation</a></li>
+<li><a href="https://docs.xernerx.com/packages/@xernerx/commands"><code>@xernerx/commands</code> Documentation</a></li>
+<li><a href="https://docs.xernerx.com/packages/@xernerx/hooks"><code>@xernerx/hooks</code> Documentation</a></li>
+<li><a href="https://docs.xernerx.com/packages/@xernerx/terminal"><code>@xernerx/terminal</code> Documentation</a></li>
+<li><a href="https://docs.xernerx.com/packages/@xernerx/websocket"><code>@xernerx/websocket</code> Documentation</a></li>
+<li><a href="https://info.xernerx.com/changelog#@xernerx/stats">Release Changelog</a></li>
+</ul>
+<hr>
+<h2 id="support-links" class="tsd-anchor-link">Support &amp; Links<a href="#support-links" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<ul>
+<li><a href="https://xernerx.com/discord">Discord Support Server</a></li>
+<li><a href="https://docs.xernerx.com/packages/@xernerx/stats"><code>@xernerx/stats</code> Package Documentation</a></li>
+<li><a href="https://portal.xernerx.com">Xernerx Developer Portal</a></li>
+<li><a href="https://xernerx.com">Xernerx Website</a></li>
+</ul>
+</div></div>
+<div class="col-sidebar">
+<div class="page-menu">
+<div class="tsd-navigation settings">
+<details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg>
+<h3>Settings</h3></summary>
+<div class="tsd-accordion-details">
+<div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span>
+<ul id="tsd-filter-options">
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-alpha" name="alpha"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Alpha</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-beta" name="beta"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Beta</span></label></li></ul></div>
+<div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
+<details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg>
+<h3>On This Page</h3></summary>
+<div class="tsd-accordion-details"><a href="#xernerxstats"><span>@xernerx/stats</span></a>
+<ul>
+<li><a href="#features"><span>Features</span></a></li>
+<li><a href="#install"><span>Install</span></a></li>
+<li><a href="#setup"><span>Setup</span></a></li>
+<li><a href="#standalone-rest-client-"><span>Standalone <wbr/>REST <wbr/>Client ()</span></a></li>
+<li><a href="#direct-function-"><span>Direct <wbr/>Function ()</span></a></li>
+<li><a href="#options-"><span>Options ( &amp; )</span></a></li>
+<li><a href="#methods"><span> <wbr/>Methods</span></a></li>
+<li><a href="#documentation-api-reference"><span>Documentation &amp; <wbr/>API <wbr/>Reference</span></a></li>
+<li>
+<ul>
+<li><a href="#package-symbols-"><span>Package <wbr/>Symbols ()</span></a></li>
+<li><a href="#rest-api-v1-endpoints"><span>REST <wbr/>API v1 <wbr/>Endpoints</span></a></li>
+<li><a href="#ecosystem-links"><span>Ecosystem <wbr/>Links</span></a></li></ul></li>
+<li><a href="#support-links"><span>Support &amp; <wbr/>Links</span></a></li></ul></div></details></div>
+<div class="site-menu">
+<nav class="tsd-navigation"><a href="modules.html">Xernerx Stats - v1.0.14</a>
+<ul class="tsd-small-nested-navigation" id="tsd-nav-container">
+<li>Loading...</li></ul></nav></div></div></div><footer>
+<p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a> with <a href="https://github.com/JulianWowra/typedoc-github-theme" target="_blank">typedoc-github-theme</a><br>
+            <span id="generation-date"></span>
+            <script>
+                window.GENERATION_DATE = 1793221170247;
+
+                (() => {
+                    
+        const formatter = new Intl.RelativeTimeFormat('en', {
+            numeric: 'auto',
+            style: 'short',
+        });
+
+        const divisions = [
+            { amount: 60, name: 'seconds' },
+            { amount: 60, name: 'minutes' },
+            { amount: 24, name: 'hours' },
+            { amount: 7, name: 'days' },
+            { amount: 4.34524, name: 'weeks' },
+            { amount: 12, name: 'months' },
+            { amount: Number.POSITIVE_INFINITY, name: 'years' }
+        ];
+
+        function formatTimeAgo(date) {
+            let duration = (date - new Date()) / 1000;
+            
+            for (const division of divisions) {
+                if (Math.abs(duration) < division.amount) {
+                    return formatter.format(Math.round(duration), division.name);
+                }
+                duration /= division.amount;
+            }
+        }
+
+        document.getElementById('generation-date').title = new Date(window.GENERATION_DATE).toLocaleString();
+        document.getElementById('generation-date').innerText = `Last modified ${formatTimeAgo(window.GENERATION_DATE)}`;
+    
+                })();
+            </script>
+        </p></footer>
+<div class="overlay"></div></body></html>
