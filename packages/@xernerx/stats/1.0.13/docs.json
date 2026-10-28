@@ -1,0 +1,4638 @@
+{
+	"schemaVersion": "2.0",
+	"id": 0,
+	"name": "Xernerx Stats",
+	"variant": "project",
+	"kind": 1,
+	"flags": {},
+	"children": [
+		{
+			"id": 2,
+			"name": "client/BaseClient",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 6,
+					"name": "BaseClient",
+					"variant": "declaration",
+					"kind": 128,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Base REST client holding the resolved Xernerx API URL and bearer token."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 7,
+							"name": "constructor",
+							"variant": "declaration",
+							"kind": 512,
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "client/BaseClient.ts",
+									"line": 27,
+									"character": 1
+								}
+							],
+							"signatures": [
+								{
+									"id": 8,
+									"name": "BaseClient",
+									"variant": "signature",
+									"kind": 16384,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Creates a new "
+											},
+											{
+												"kind": "inline-tag",
+												"tag": "@link",
+												"text": "BaseClient",
+												"target": 6
+											},
+											{
+												"kind": "text",
+												"text": " instance."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "client/BaseClient.ts",
+											"line": 27,
+											"character": 1
+										}
+									],
+									"parameters": [
+										{
+											"id": 9,
+											"name": "token",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Xernerx API bearer token."
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 10,
+											"name": "options",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Optional environment and endpoint overrides."
+													}
+												]
+											},
+											"type": {
+												"type": "reference",
+												"target": 3,
+												"name": "BaseClientOptions",
+												"package": "@xernerx/stats"
+											},
+											"defaultValue": "{}"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": 6,
+										"name": "BaseClient",
+										"package": "@xernerx/stats"
+									}
+								}
+							]
+						},
+						{
+							"id": 11,
+							"name": "token",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPublic": true,
+								"isReadonly": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Xernerx API bearer token used for "
+									},
+									{
+										"kind": "code",
+										"text": "`Authorization`"
+									},
+									{
+										"kind": "text",
+										"text": " headers."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/BaseClient.ts",
+									"line": 18,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 12,
+							"name": "url",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPublic": true,
+								"isReadonly": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Resolved Xernerx API base URL without a trailing slash."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/BaseClient.ts",
+									"line": 20,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"children": [
+								7
+							]
+						},
+						{
+							"title": "Properties",
+							"children": [
+								11,
+								12
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "client/BaseClient.ts",
+							"line": 16,
+							"character": 13
+						}
+					],
+					"extendedBy": [
+						{
+							"type": "reference",
+							"target": 29,
+							"name": "StatsClient"
+						},
+						{
+							"type": "reference",
+							"target": 62,
+							"name": "XernerxStats"
+						}
+					]
+				},
+				{
+					"id": 3,
+					"name": "BaseClientOptions",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Base configuration options for Xernerx API clients."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 5,
+							"name": "dev",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "When "
+									},
+									{
+										"kind": "code",
+										"text": "`true`"
+									},
+									{
+										"kind": "text",
+										"text": ", connects to the local development API ("
+									},
+									{
+										"kind": "code",
+										"text": "`http://localhost:4001`"
+									},
+									{
+										"kind": "text",
+										"text": ")."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/BaseClient.ts",
+									"line": 10,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 4,
+							"name": "url",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Optional custom Xernerx API base URL (defaults to "
+									},
+									{
+										"kind": "code",
+										"text": "`https://api.xernerx.com`"
+									},
+									{
+										"kind": "text",
+										"text": ")."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/BaseClient.ts",
+									"line": 8,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								5,
+								4
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "client/BaseClient.ts",
+							"line": 6,
+							"character": 17
+						}
+					],
+					"extendedBy": [
+						{
+							"type": "reference",
+							"target": 14,
+							"name": "StatsClientOptions"
+						},
+						{
+							"type": "reference",
+							"target": 57,
+							"name": "XernerxStatsSettings"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"children": [
+						6
+					]
+				},
+				{
+					"title": "Interfaces",
+					"children": [
+						3
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "client/BaseClient.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 13,
+			"name": "client/StatsClient",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 29,
+					"name": "StatsClient",
+					"variant": "declaration",
+					"kind": 128,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Standalone REST client for reading, posting, updating, and deleting bot telemetry on the Xernerx Suite API."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 30,
+							"name": "constructor",
+							"variant": "declaration",
+							"kind": 512,
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "client/StatsClient.ts",
+									"line": 51,
+									"character": 1
+								}
+							],
+							"signatures": [
+								{
+									"id": 31,
+									"name": "StatsClient",
+									"variant": "signature",
+									"kind": 16384,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Creates a new "
+											},
+											{
+												"kind": "inline-tag",
+												"tag": "@link",
+												"text": "StatsClient",
+												"target": 29
+											},
+											{
+												"kind": "text",
+												"text": " instance."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "client/StatsClient.ts",
+											"line": 51,
+											"character": 1
+										}
+									],
+									"parameters": [
+										{
+											"id": 32,
+											"name": "options",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Bot ID, API token, and optional base URL configuration."
+													}
+												]
+											},
+											"type": {
+												"type": "reference",
+												"target": 14,
+												"name": "StatsClientOptions",
+												"package": "@xernerx/stats"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": 29,
+										"name": "StatsClient",
+										"package": "@xernerx/stats"
+									},
+									"overwrites": {
+										"type": "reference",
+										"target": 8,
+										"name": "BaseClient.constructor"
+									}
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"target": 7,
+								"name": "BaseClient.constructor"
+							}
+						},
+						{
+							"id": 33,
+							"name": "botId",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPublic": true,
+								"isReadonly": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Default Discord bot ID targeted by this client."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/StatsClient.ts",
+									"line": 45,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 54,
+							"name": "token",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPublic": true,
+								"isReadonly": true,
+								"isInherited": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Xernerx API bearer token used for "
+									},
+									{
+										"kind": "code",
+										"text": "`Authorization`"
+									},
+									{
+										"kind": "text",
+										"text": " headers."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/BaseClient.ts",
+									"line": 18,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": 11,
+								"name": "BaseClient.token"
+							}
+						},
+						{
+							"id": 55,
+							"name": "url",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPublic": true,
+								"isReadonly": true,
+								"isInherited": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Resolved Xernerx API base URL without a trailing slash."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/BaseClient.ts",
+									"line": 20,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": 12,
+								"name": "BaseClient.url"
+							}
+						},
+						{
+							"id": 50,
+							"name": "delete",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "client/StatsClient.ts",
+									"line": 129,
+									"character": 14
+								}
+							],
+							"signatures": [
+								{
+									"id": 51,
+									"name": "delete",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Deletes a specific telemetry entry (or all telemetry entries if "
+											},
+											{
+												"kind": "code",
+												"text": "`statId`"
+											},
+											{
+												"kind": "text",
+												"text": " is omitted) via "
+											},
+											{
+												"kind": "code",
+												"text": "`DELETE /v1/bots/:id/stats`"
+											},
+											{
+												"kind": "text",
+												"text": "."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": [
+													{
+														"kind": "text",
+														"text": "A promise resolving to the deletion result."
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "client/StatsClient.ts",
+											"line": 129,
+											"character": 14
+										}
+									],
+									"parameters": [
+										{
+											"id": 52,
+											"name": "statId",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Optional telemetry snapshot "
+													},
+													{
+														"kind": "code",
+														"text": "`_id`"
+													},
+													{
+														"kind": "text",
+														"text": " to delete."
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 53,
+											"name": "botId",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Optional bot ID override (defaults to "
+													},
+													{
+														"kind": "code",
+														"text": "`this.botId`"
+													},
+													{
+														"kind": "text",
+														"text": ")."
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "..."
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": {
+											"packageName": "typescript",
+											"packagePath": "lib/lib.es5.d.ts",
+											"qualifiedName": "Promise"
+										},
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										],
+										"name": "Promise",
+										"package": "typescript"
+									}
+								}
+							]
+						},
+						{
+							"id": 38,
+							"name": "get",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "client/StatsClient.ts",
+									"line": 66,
+									"character": 14
+								}
+							],
+							"signatures": [
+								{
+									"id": 39,
+									"name": "get",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Fetches historical telemetry records for a bot from "
+											},
+											{
+												"kind": "code",
+												"text": "`GET /v1/bots/:id/stats`"
+											},
+											{
+												"kind": "text",
+												"text": "."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": [
+													{
+														"kind": "text",
+														"text": "A promise resolving to an array of "
+													},
+													{
+														"kind": "inline-tag",
+														"tag": "@link",
+														"text": "StatRecord",
+														"target": 19
+													},
+													{
+														"kind": "text",
+														"text": " entries."
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "client/StatsClient.ts",
+											"line": 66,
+											"character": 14
+										}
+									],
+									"parameters": [
+										{
+											"id": 40,
+											"name": "botId",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Optional bot ID override (defaults to "
+													},
+													{
+														"kind": "code",
+														"text": "`this.botId`"
+													},
+													{
+														"kind": "text",
+														"text": ")."
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "..."
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": {
+											"packageName": "typescript",
+											"packagePath": "lib/lib.es5.d.ts",
+											"qualifiedName": "Promise"
+										},
+										"typeArguments": [
+											{
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"target": 19,
+													"name": "StatRecord",
+													"package": "@xernerx/stats"
+												}
+											}
+										],
+										"name": "Promise",
+										"package": "typescript"
+									}
+								}
+							]
+						},
+						{
+							"id": 41,
+							"name": "post",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "client/StatsClient.ts",
+									"line": 89,
+									"character": 14
+								}
+							],
+							"signatures": [
+								{
+									"id": 42,
+									"name": "post",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Posts a new telemetry snapshot for a bot to "
+											},
+											{
+												"kind": "code",
+												"text": "`POST /v1/bots/:id/stats`"
+											},
+											{
+												"kind": "text",
+												"text": "."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": [
+													{
+														"kind": "text",
+														"text": "A promise resolving to the API response body."
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "client/StatsClient.ts",
+											"line": 89,
+											"character": 14
+										}
+									],
+									"parameters": [
+										{
+											"id": 43,
+											"name": "data",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Telemetry payload ("
+													},
+													{
+														"kind": "code",
+														"text": "`guildCount`"
+													},
+													{
+														"kind": "text",
+														"text": ", "
+													},
+													{
+														"kind": "code",
+														"text": "`userCount`"
+													},
+													{
+														"kind": "text",
+														"text": ", "
+													},
+													{
+														"kind": "code",
+														"text": "`shardCount`"
+													},
+													{
+														"kind": "text",
+														"text": ", "
+													},
+													{
+														"kind": "code",
+														"text": "`shards`"
+													},
+													{
+														"kind": "text",
+														"text": ", etc.)."
+													}
+												]
+											},
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "typescript",
+													"packagePath": "lib/lib.es5.d.ts",
+													"qualifiedName": "Omit"
+												},
+												"typeArguments": [
+													{
+														"type": "reference",
+														"target": 84,
+														"name": "StatsPayload",
+														"package": "@xernerx/stats"
+													},
+													{
+														"type": "literal",
+														"value": "id"
+													}
+												],
+												"name": "Omit",
+												"package": "typescript"
+											}
+										},
+										{
+											"id": 44,
+											"name": "botId",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Optional bot ID override (defaults to "
+													},
+													{
+														"kind": "code",
+														"text": "`this.botId`"
+													},
+													{
+														"kind": "text",
+														"text": ")."
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "..."
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": {
+											"packageName": "typescript",
+											"packagePath": "lib/lib.es5.d.ts",
+											"qualifiedName": "Promise"
+										},
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										],
+										"name": "Promise",
+										"package": "typescript"
+									}
+								}
+							]
+						},
+						{
+							"id": 45,
+							"name": "update",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "client/StatsClient.ts",
+									"line": 100,
+									"character": 14
+								}
+							],
+							"signatures": [
+								{
+									"id": 46,
+									"name": "update",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Updates an existing telemetry snapshot or the latest snapshot via "
+											},
+											{
+												"kind": "code",
+												"text": "`PATCH /v1/bots/:id/stats`"
+											},
+											{
+												"kind": "text",
+												"text": "."
+											}
+										],
+										"blockTags": [
+											{
+												"tag": "@returns",
+												"content": [
+													{
+														"kind": "text",
+														"text": "A promise resolving to the updated telemetry record."
+													}
+												]
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "client/StatsClient.ts",
+											"line": 100,
+											"character": 14
+										}
+									],
+									"parameters": [
+										{
+											"id": 47,
+											"name": "statIdOrData",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Either a specific "
+													},
+													{
+														"kind": "code",
+														"text": "`statId`"
+													},
+													{
+														"kind": "text",
+														"text": " string or the partial telemetry payload to apply to the latest entry."
+													}
+												]
+											},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "string"
+													},
+													{
+														"type": "reference",
+														"target": {
+															"packageName": "typescript",
+															"packagePath": "lib/lib.es5.d.ts",
+															"qualifiedName": "Partial"
+														},
+														"typeArguments": [
+															{
+																"type": "reference",
+																"target": {
+																	"packageName": "typescript",
+																	"packagePath": "lib/lib.es5.d.ts",
+																	"qualifiedName": "Omit"
+																},
+																"typeArguments": [
+																	{
+																		"type": "reference",
+																		"target": 84,
+																		"name": "StatsPayload",
+																		"package": "@xernerx/stats"
+																	},
+																	{
+																		"type": "literal",
+																		"value": "id"
+																	}
+																],
+																"name": "Omit",
+																"package": "typescript"
+															}
+														],
+														"name": "Partial",
+														"package": "typescript"
+													}
+												]
+											}
+										},
+										{
+											"id": 48,
+											"name": "data",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Partial telemetry payload when "
+													},
+													{
+														"kind": "code",
+														"text": "`statIdOrData`"
+													},
+													{
+														"kind": "text",
+														"text": " is a "
+													},
+													{
+														"kind": "code",
+														"text": "`statId`"
+													},
+													{
+														"kind": "text",
+														"text": " string."
+													}
+												]
+											},
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "typescript",
+													"packagePath": "lib/lib.es5.d.ts",
+													"qualifiedName": "Partial"
+												},
+												"typeArguments": [
+													{
+														"type": "reference",
+														"target": {
+															"packageName": "typescript",
+															"packagePath": "lib/lib.es5.d.ts",
+															"qualifiedName": "Omit"
+														},
+														"typeArguments": [
+															{
+																"type": "reference",
+																"target": 84,
+																"name": "StatsPayload",
+																"package": "@xernerx/stats"
+															},
+															{
+																"type": "literal",
+																"value": "id"
+															}
+														],
+														"name": "Omit",
+														"package": "typescript"
+													}
+												],
+												"name": "Partial",
+												"package": "typescript"
+											}
+										},
+										{
+											"id": 49,
+											"name": "botId",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Optional bot ID override (defaults to "
+													},
+													{
+														"kind": "code",
+														"text": "`this.botId`"
+													},
+													{
+														"kind": "text",
+														"text": ")."
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											},
+											"defaultValue": "..."
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": {
+											"packageName": "typescript",
+											"packagePath": "lib/lib.es5.d.ts",
+											"qualifiedName": "Promise"
+										},
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "any"
+											}
+										],
+										"name": "Promise",
+										"package": "typescript"
+									}
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"children": [
+								30
+							]
+						},
+						{
+							"title": "Properties",
+							"children": [
+								33,
+								54,
+								55
+							]
+						},
+						{
+							"title": "Methods",
+							"children": [
+								50,
+								38,
+								41,
+								45
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "client/StatsClient.ts",
+							"line": 43,
+							"character": 13
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"target": 6,
+							"name": "BaseClient",
+							"package": "@xernerx/stats"
+						}
+					]
+				},
+				{
+					"id": 19,
+					"name": "StatRecord",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Historical bot telemetry record returned by "
+							},
+							{
+								"kind": "code",
+								"text": "`GET /v1/bots/:id/stats`"
+							},
+							{
+								"kind": "text",
+								"text": "."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 20,
+							"name": "_id",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Unique MongoDB document identifier for this telemetry snapshot."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/StatsClient.ts",
+									"line": 21,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 22,
+							"name": "guildCount",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Total number of guilds the bot is in."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/StatsClient.ts",
+									"line": 25,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 21,
+							"name": "id",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Discord bot ID."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/StatsClient.ts",
+									"line": 23,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 26,
+							"name": "onlineSince",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Unix timestamp (ms) when the bot process came online."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/StatsClient.ts",
+									"line": 33,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 23,
+							"name": "shardCount",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Total number of shards running for the bot."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/StatsClient.ts",
+									"line": 27,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 27,
+							"name": "shards",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Optional per-shard telemetry breakdown."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/StatsClient.ts",
+									"line": 35,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"target": 79,
+									"name": "ShardStats",
+									"package": "@xernerx/stats"
+								}
+							}
+						},
+						{
+							"id": 28,
+							"name": "timestamp",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "ISO-8601 timestamp when the telemetry entry was recorded."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/StatsClient.ts",
+									"line": 37,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 24,
+							"name": "userCount",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Total cached or approximate user count across all guilds."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/StatsClient.ts",
+									"line": 29,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 25,
+							"name": "voteCount",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Total vote count recorded for the bot at the time of the snapshot."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/StatsClient.ts",
+									"line": 31,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								20,
+								22,
+								21,
+								26,
+								23,
+								27,
+								28,
+								24,
+								25
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "client/StatsClient.ts",
+							"line": 19,
+							"character": 17
+						}
+					]
+				},
+				{
+					"id": 14,
+					"name": "StatsClientOptions",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Configuration options for initializing a standalone "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "StatsClient",
+								"target": 29
+							},
+							{
+								"kind": "text",
+								"text": "."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 15,
+							"name": "botId",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Discord application / bot ID whose statistics are managed."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/StatsClient.ts",
+									"line": 11,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 18,
+							"name": "dev",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true,
+								"isInherited": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "When "
+									},
+									{
+										"kind": "code",
+										"text": "`true`"
+									},
+									{
+										"kind": "text",
+										"text": ", connects to the local development API ("
+									},
+									{
+										"kind": "code",
+										"text": "`http://localhost:4001`"
+									},
+									{
+										"kind": "text",
+										"text": ")."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/BaseClient.ts",
+									"line": 10,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": 5,
+								"name": "BaseClientOptions.dev"
+							}
+						},
+						{
+							"id": 16,
+							"name": "token",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Xernerx Suite API bearer token."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/StatsClient.ts",
+									"line": 13,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 17,
+							"name": "url",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true,
+								"isInherited": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Optional custom Xernerx API base URL (defaults to "
+									},
+									{
+										"kind": "code",
+										"text": "`https://api.xernerx.com`"
+									},
+									{
+										"kind": "text",
+										"text": ")."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/BaseClient.ts",
+									"line": 8,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": 4,
+								"name": "BaseClientOptions.url"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								15,
+								18,
+								16,
+								17
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "client/StatsClient.ts",
+							"line": 9,
+							"character": 17
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"target": 3,
+							"name": "BaseClientOptions",
+							"package": "@xernerx/stats"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"children": [
+						29
+					]
+				},
+				{
+					"title": "Interfaces",
+					"children": [
+						19,
+						14
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "client/StatsClient.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 56,
+			"name": "client/XernerxStats",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 62,
+					"name": "XernerxStats",
+					"variant": "declaration",
+					"kind": 128,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Automatic telemetry reporter for "
+							},
+							{
+								"kind": "code",
+								"text": "`@xernerx/framework`"
+							},
+							{
+								"kind": "text",
+								"text": " ("
+							},
+							{
+								"kind": "code",
+								"text": "`XernerxClient`"
+							},
+							{
+								"kind": "text",
+								"text": " or "
+							},
+							{
+								"kind": "code",
+								"text": "`XernerxShardClient`"
+							},
+							{
+								"kind": "text",
+								"text": ").\n\nWaits for all shards/clusters to report ready statistics, posts an initial snapshot to the Xernerx Suite API,\nand schedules periodic updates at "
+							},
+							{
+								"kind": "code",
+								"text": "`settings.interval`"
+							},
+							{
+								"kind": "text",
+								"text": "."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 63,
+							"name": "constructor",
+							"variant": "declaration",
+							"kind": 512,
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "client/XernerxStats.ts",
+									"line": 36,
+									"character": 1
+								}
+							],
+							"signatures": [
+								{
+									"id": 64,
+									"name": "XernerxStats",
+									"variant": "signature",
+									"kind": 16384,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Attaches automatic telemetry reporting to a "
+											},
+											{
+												"kind": "code",
+												"text": "`XernerxClient`"
+											},
+											{
+												"kind": "text",
+												"text": " or "
+											},
+											{
+												"kind": "code",
+												"text": "`XernerxShardClient`"
+											},
+											{
+												"kind": "text",
+												"text": "."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "client/XernerxStats.ts",
+											"line": 36,
+											"character": 1
+										}
+									],
+									"parameters": [
+										{
+											"id": 65,
+											"name": "client",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Standalone "
+													},
+													{
+														"kind": "code",
+														"text": "`XernerxClient`"
+													},
+													{
+														"kind": "text",
+														"text": " or primary "
+													},
+													{
+														"kind": "code",
+														"text": "`XernerxShardClient`"
+													},
+													{
+														"kind": "text",
+														"text": " manager."
+													}
+												]
+											},
+											"type": {
+												"type": "union",
+												"types": [
+													{
+														"type": "reference",
+														"target": {
+															"packageName": "@xernerx/framework",
+															"packagePath": "dist/main.d.ts",
+															"qualifiedName": "XernerxShardClient"
+														},
+														"name": "XernerxShardClient",
+														"package": "@xernerx/framework"
+													},
+													{
+														"type": "reference",
+														"target": {
+															"packageName": "@xernerx/framework",
+															"packagePath": "dist/main.d.ts",
+															"qualifiedName": "XernerxClient"
+														},
+														"name": "XernerxClient",
+														"package": "@xernerx/framework"
+													}
+												]
+											}
+										},
+										{
+											"id": 66,
+											"name": "settings",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "API token, posting interval, and optional API base URL settings."
+													}
+												]
+											},
+											"type": {
+												"type": "reference",
+												"target": 57,
+												"name": "XernerxStatsSettings",
+												"package": "@xernerx/stats"
+											},
+											"defaultValue": "..."
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": 62,
+										"name": "XernerxStats",
+										"package": "@xernerx/stats"
+									},
+									"overwrites": {
+										"type": "reference",
+										"target": 8,
+										"name": "BaseClient.constructor"
+									}
+								}
+							],
+							"overwrites": {
+								"type": "reference",
+								"target": 7,
+								"name": "BaseClient.constructor"
+							}
+						},
+						{
+							"id": 67,
+							"name": "settings",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPublic": true,
+								"isReadonly": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Resolved settings for telemetry posting and interval scheduling."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/XernerxStats.ts",
+									"line": 29,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": 57,
+								"name": "XernerxStatsSettings",
+								"package": "@xernerx/stats"
+							}
+						},
+						{
+							"id": 71,
+							"name": "token",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPublic": true,
+								"isReadonly": true,
+								"isInherited": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Xernerx API bearer token used for "
+									},
+									{
+										"kind": "code",
+										"text": "`Authorization`"
+									},
+									{
+										"kind": "text",
+										"text": " headers."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/BaseClient.ts",
+									"line": 18,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": 11,
+								"name": "BaseClient.token"
+							}
+						},
+						{
+							"id": 72,
+							"name": "url",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPublic": true,
+								"isReadonly": true,
+								"isInherited": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Resolved Xernerx API base URL without a trailing slash."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/BaseClient.ts",
+									"line": 20,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": 12,
+								"name": "BaseClient.url"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"children": [
+								63
+							]
+						},
+						{
+							"title": "Properties",
+							"children": [
+								67,
+								71,
+								72
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "client/XernerxStats.ts",
+							"line": 27,
+							"character": 13
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"target": 6,
+							"name": "BaseClient",
+							"package": "@xernerx/stats"
+						}
+					]
+				},
+				{
+					"id": 57,
+					"name": "XernerxStatsSettings",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Configuration settings for the "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "XernerxStats",
+								"target": 62
+							},
+							{
+								"kind": "text",
+								"text": " auto-sync client."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 61,
+							"name": "dev",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true,
+								"isInherited": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "When "
+									},
+									{
+										"kind": "code",
+										"text": "`true`"
+									},
+									{
+										"kind": "text",
+										"text": ", connects to the local development API ("
+									},
+									{
+										"kind": "code",
+										"text": "`http://localhost:4001`"
+									},
+									{
+										"kind": "text",
+										"text": ")."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/BaseClient.ts",
+									"line": 10,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": 5,
+								"name": "BaseClientOptions.dev"
+							}
+						},
+						{
+							"id": 58,
+							"name": "interval",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Interval in milliseconds between automatic telemetry posts (defaults to "
+									},
+									{
+										"kind": "code",
+										"text": "`1800000`"
+									},
+									{
+										"kind": "text",
+										"text": " / 30 minutes)."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/XernerxStats.ts",
+									"line": 16,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 59,
+							"name": "token",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Xernerx Suite API bearer token."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/XernerxStats.ts",
+									"line": 18,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 60,
+							"name": "url",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true,
+								"isInherited": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Optional custom Xernerx API base URL (defaults to "
+									},
+									{
+										"kind": "code",
+										"text": "`https://api.xernerx.com`"
+									},
+									{
+										"kind": "text",
+										"text": ")."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "client/BaseClient.ts",
+									"line": 8,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": 4,
+								"name": "BaseClientOptions.url"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								61,
+								58,
+								59,
+								60
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "client/XernerxStats.ts",
+							"line": 14,
+							"character": 17
+						}
+					],
+					"extendedTypes": [
+						{
+							"type": "reference",
+							"target": 3,
+							"name": "BaseClientOptions",
+							"package": "@xernerx/stats"
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"children": [
+						62
+					]
+				},
+				{
+					"title": "Interfaces",
+					"children": [
+						57
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "client/XernerxStats.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 73,
+			"name": "functions/post",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 79,
+					"name": "ShardStats",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Telemetry snapshot for a single Discord bot shard or cluster."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 83,
+							"name": "guildCount",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Total guild count managed by this shard."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "functions/post.ts",
+									"line": 14,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "number"
+									},
+									{
+										"type": "literal",
+										"value": null
+									}
+								]
+							}
+						},
+						{
+							"id": 81,
+							"name": "onlineSince",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Unix timestamp (ms) when the shard came online."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "functions/post.ts",
+									"line": 10,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "number"
+									},
+									{
+										"type": "literal",
+										"value": null
+									}
+								]
+							}
+						},
+						{
+							"id": 80,
+							"name": "shardId",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Numeric or string identifier of the shard/cluster."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "functions/post.ts",
+									"line": 8,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									},
+									{
+										"type": "intrinsic",
+										"name": "number"
+									}
+								]
+							}
+						},
+						{
+							"id": 82,
+							"name": "userCount",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Total user count managed by this shard."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "functions/post.ts",
+									"line": 12,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "number"
+									},
+									{
+										"type": "literal",
+										"value": null
+									}
+								]
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								83,
+								81,
+								80,
+								82
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "functions/post.ts",
+							"line": 6,
+							"character": 17
+						}
+					]
+				},
+				{
+					"id": 84,
+					"name": "StatsPayload",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Payload accepted by "
+							},
+							{
+								"kind": "code",
+								"text": "`POST /v1/bots/:id/stats`"
+							},
+							{
+								"kind": "text",
+								"text": " when reporting bot telemetry."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 87,
+							"name": "guildCount",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Total number of guilds the bot is in."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "functions/post.ts",
+									"line": 26,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "number"
+									},
+									{
+										"type": "literal",
+										"value": null
+									}
+								]
+							}
+						},
+						{
+							"id": 85,
+							"name": "id",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Discord bot ID (required when calling "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@link",
+										"text": "post",
+										"target": 74
+									},
+									{
+										"kind": "text",
+										"text": " directly)."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "functions/post.ts",
+									"line": 22,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 86,
+							"name": "onlineSince",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Unix timestamp (ms) when the bot process came online."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "functions/post.ts",
+									"line": 24,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "number"
+									},
+									{
+										"type": "literal",
+										"value": null
+									}
+								]
+							}
+						},
+						{
+							"id": 88,
+							"name": "serverCount",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Alias for "
+									},
+									{
+										"kind": "code",
+										"text": "`guildCount`"
+									},
+									{
+										"kind": "text",
+										"text": " supported by the Xernerx API."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "functions/post.ts",
+									"line": 28,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "number"
+									},
+									{
+										"type": "literal",
+										"value": null
+									}
+								]
+							}
+						},
+						{
+							"id": 90,
+							"name": "shardCount",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Total number of shards or "
+									},
+									{
+										"kind": "code",
+										"text": "`'auto'`"
+									},
+									{
+										"kind": "text",
+										"text": "."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "functions/post.ts",
+									"line": 32,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "number"
+									},
+									{
+										"type": "literal",
+										"value": "auto"
+									},
+									{
+										"type": "literal",
+										"value": null
+									}
+								]
+							}
+						},
+						{
+							"id": 92,
+							"name": "shards",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Optional array of per-shard telemetry objects."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "functions/post.ts",
+									"line": 36,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "tuple"
+									},
+									{
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"target": 79,
+											"name": "ShardStats",
+											"package": "@xernerx/stats"
+										}
+									}
+								]
+							}
+						},
+						{
+							"id": 89,
+							"name": "userCount",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Total number of users across all guilds."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "functions/post.ts",
+									"line": 30,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "number"
+									},
+									{
+										"type": "literal",
+										"value": null
+									}
+								]
+							}
+						},
+						{
+							"id": 91,
+							"name": "voteCount",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Optional total vote count override."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "functions/post.ts",
+									"line": 34,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "number"
+									},
+									{
+										"type": "literal",
+										"value": null
+									}
+								]
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								87,
+								85,
+								86,
+								88,
+								90,
+								92,
+								89,
+								91
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "functions/post.ts",
+							"line": 20,
+							"character": 17
+						}
+					]
+				},
+				{
+					"id": 74,
+					"name": "post",
+					"variant": "declaration",
+					"kind": 64,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "functions/post.ts",
+							"line": 46,
+							"character": 22
+						}
+					],
+					"signatures": [
+						{
+							"id": 75,
+							"name": "post",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Posts a bot telemetry snapshot directly to "
+									},
+									{
+										"kind": "code",
+										"text": "`POST /v1/bots/:id/stats`"
+									},
+									{
+										"kind": "text",
+										"text": "."
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@returns",
+										"content": [
+											{
+												"kind": "text",
+												"text": "A promise resolving to the parsed JSON response from the Xernerx API."
+											}
+										]
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "functions/post.ts",
+									"line": 46,
+									"character": 22
+								}
+							],
+							"parameters": [
+								{
+									"id": 76,
+									"name": "data",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Telemetry payload containing "
+											},
+											{
+												"kind": "code",
+												"text": "`id`"
+											},
+											{
+												"kind": "text",
+												"text": " (bot ID) and guild/user/shard metrics."
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"target": 84,
+										"name": "StatsPayload",
+										"package": "@xernerx/stats"
+									}
+								},
+								{
+									"id": 77,
+									"name": "token",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Xernerx Suite API bearer token."
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 78,
+									"name": "baseUrl",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Optional custom API base URL (defaults to "
+											},
+											{
+												"kind": "code",
+												"text": "`'https://api.xernerx.com'`"
+											},
+											{
+												"kind": "text",
+												"text": ")."
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "'https://api.xernerx.com'"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"packageName": "typescript",
+									"packagePath": "lib/lib.es5.d.ts",
+									"qualifiedName": "Promise"
+								},
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								],
+								"name": "Promise",
+								"package": "typescript"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"children": [
+						79,
+						84
+					]
+				},
+				{
+					"title": "Functions",
+					"children": [
+						74
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "functions/post.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"documents": [
+		{
+			"id": 1,
+			"name": "CHANGELOG",
+			"variant": "document",
+			"kind": 8388608,
+			"flags": {},
+			"content": [
+				{
+					"kind": "text",
+					"text": "<!-- @format -->\n\n## 1.0.13\n\n### Patch Changes\n\n- Simplify "
+				},
+				{
+					"kind": "code",
+					"text": "`StatsClient`"
+				},
+				{
+					"kind": "text",
+					"text": " API methods to direct keywords ("
+				},
+				{
+					"kind": "code",
+					"text": "`get`"
+				},
+				{
+					"kind": "text",
+					"text": ", "
+				},
+				{
+					"kind": "code",
+					"text": "`post`"
+				},
+				{
+					"kind": "text",
+					"text": ", "
+				},
+				{
+					"kind": "code",
+					"text": "`update`"
+				},
+				{
+					"kind": "text",
+					"text": ", "
+				},
+				{
+					"kind": "code",
+					"text": "`delete`"
+				},
+				{
+					"kind": "text",
+					"text": ") and update JSDoc comments and "
+				},
+				{
+					"kind": "code",
+					"text": "`README.md`"
+				},
+				{
+					"kind": "text",
+					"text": " documentation.\n\n## 1.0.12\n\n### Patch Changes\n\n- Fix TypeDoc build ("
+				},
+				{
+					"kind": "code",
+					"text": "`tslib`"
+				},
+				{
+					"kind": "text",
+					"text": " & "
+				},
+				{
+					"kind": "code",
+					"text": "`CHANGELOG.md`"
+				},
+				{
+					"kind": "text",
+					"text": " project document), standardize named "
+				},
+				{
+					"kind": "code",
+					"text": "`BaseClient`"
+				},
+				{
+					"kind": "text",
+					"text": " export, and align "
+				},
+				{
+					"kind": "code",
+					"text": "`commit`"
+				},
+				{
+					"kind": "text",
+					"text": " / "
+				},
+				{
+					"kind": "code",
+					"text": "`ship`"
+				},
+				{
+					"kind": "text",
+					"text": " scripts and "
+				},
+				{
+					"kind": "code",
+					"text": "`.prettierignore`"
+				},
+				{
+					"kind": "text",
+					"text": ".\n\n## 1.0.11\n\n### Patch Changes\n\n- <!-- @format -->\n\n  Migrate build and release pipeline to pnpm and Changesets, add "
+				},
+				{
+					"kind": "code",
+					"text": "`StatsClient`"
+				},
+				{
+					"kind": "text",
+					"text": " for "
+				},
+				{
+					"kind": "code",
+					"text": "`/v1/bots/:id/stats`"
+				},
+				{
+					"kind": "text",
+					"text": " CRUD, support "
+				},
+				{
+					"kind": "code",
+					"text": "`dev`"
+				},
+				{
+					"kind": "text",
+					"text": "/"
+				},
+				{
+					"kind": "code",
+					"text": "`url`"
+				},
+				{
+					"kind": "text",
+					"text": " environment options, and fix error handling in "
+				},
+				{
+					"kind": "code",
+					"text": "`post`"
+				},
+				{
+					"kind": "text",
+					"text": ".\n\n# @xernerx/stats"
+				}
+			],
+			"frontmatter": {}
+		}
+	],
+	"childrenIncludingDocuments": [
+		1,
+		2,
+		13,
+		56,
+		73
+	],
+	"groups": [
+		{
+			"title": "Documents",
+			"children": [
+				1
+			]
+		},
+		{
+			"title": "Modules",
+			"children": [
+				2,
+				13,
+				56,
+				73
+			]
+		}
+	],
+	"packageName": "@xernerx/stats",
+	"packageVersion": "1.0.13",
+	"readme": [
+		{
+			"kind": "text",
+			"text": "<!-- @format -->\n\n![Xernerx Banner](https://xernerx.com/banner.png)\n\n# @xernerx/stats\n\nThe official **Xernerx Suite Telemetry & Stats SDK** ("
+		},
+		{
+			"kind": "code",
+			"text": "`@xernerx/stats`"
+		},
+		{
+			"kind": "text",
+			"text": ") to automatically report, query, update, and manage Discord bot telemetry on "
+		},
+		{
+			"kind": "code",
+			"text": "`https://api.xernerx.com/v1/bots/:id/stats`"
+		},
+		{
+			"kind": "text",
+			"text": ".\n\n---\n\n## Features\n\n- **Automatic "
+		},
+		{
+			"kind": "code",
+			"text": "`@xernerx/framework`"
+		},
+		{
+			"kind": "text",
+			"text": " Extension ("
+		},
+		{
+			"kind": "code",
+			"text": "`XernerxStats`"
+		},
+		{
+			"kind": "text",
+			"text": ")**: Waits until all shards/clusters report their metrics, posts an initial telemetry snapshot, and syncs on a configurable interval ("
+		},
+		{
+			"kind": "code",
+			"text": "`30`"
+		},
+		{
+			"kind": "text",
+			"text": " minutes by default).\n- **Standalone REST Client ("
+		},
+		{
+			"kind": "code",
+			"text": "`StatsClient`"
+		},
+		{
+			"kind": "text",
+			"text": ")**: Full class-based CRUD client ("
+		},
+		{
+			"kind": "code",
+			"text": "`this.get()`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`this.post()`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`this.update()`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`this.delete()`"
+		},
+		{
+			"kind": "text",
+			"text": ") for managing telemetry records without requiring "
+		},
+		{
+			"kind": "code",
+			"text": "`discord.js`"
+		},
+		{
+			"kind": "text",
+			"text": ".\n- **Hybrid Sharding Support**: Automatically aggregates "
+		},
+		{
+			"kind": "code",
+			"text": "`guildCount`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`userCount`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`shardCount`"
+		},
+		{
+			"kind": "text",
+			"text": ", and per-shard "
+		},
+		{
+			"kind": "code",
+			"text": "`ShardStats`"
+		},
+		{
+			"kind": "text",
+			"text": " breakdowns from "
+		},
+		{
+			"kind": "code",
+			"text": "`XernerxClient`"
+		},
+		{
+			"kind": "text",
+			"text": " and "
+		},
+		{
+			"kind": "code",
+			"text": "`XernerxShardClient`"
+		},
+		{
+			"kind": "text",
+			"text": ".\n- **Direct Helper Function ("
+		},
+		{
+			"kind": "code",
+			"text": "`post`"
+		},
+		{
+			"kind": "text",
+			"text": ")**: Lightweight zero-state helper for one-off telemetry submissions in serverless or custom pipelines.\n- **Scoped CLI Logging**: Built-in "
+		},
+		{
+			"kind": "code",
+			"text": "`@xernerx/terminal`"
+		},
+		{
+			"kind": "text",
+			"text": " integration under the "
+		},
+		{
+			"kind": "code",
+			"text": "`XS`"
+		},
+		{
+			"kind": "text",
+			"text": " scope.\n\n---\n\n## Install\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```bash\npnpm add @xernerx/stats\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```bash\nnpm install @xernerx/stats\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n---\n\n## Setup\n\nExtend "
+		},
+		{
+			"kind": "code",
+			"text": "`XernerxClient`"
+		},
+		{
+			"kind": "text",
+			"text": " and register "
+		},
+		{
+			"kind": "code",
+			"text": "`XernerxStats`"
+		},
+		{
+			"kind": "text",
+			"text": " via "
+		},
+		{
+			"kind": "code",
+			"text": "`extensionHandler`"
+		},
+		{
+			"kind": "text",
+			"text": ":\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```ts\nimport { XernerxClient } from '@xernerx/framework';\nimport { XernerxStats } from '@xernerx/stats';\nimport { Terminal } from '@xernerx/terminal';\n\nexport class Client extends XernerxClient {\n\tprivate readonly logger = new Terminal({ scope: 'XS' });\n\n\tconstructor() {\n\t\tsuper({\n\t\t\tintents: ['Guilds'],\n\t\t\ttoken: process.env.DISCORD_BOT_TOKEN!,\n\t\t});\n\n\t\tthis.modules.extensionHandler.loadExtensions(\n\t\t\tnew XernerxStats(this, {\n\t\t\t\ttoken: process.env.XERNERX_TOKEN!,\n\t\t\t\tinterval: 30 * 60_000, // Every 30 minutes (default)\n\t\t\t})\n\t\t);\n\n\t\tthis.connect();\n\t\tthis.logger.info('Initialized bot client with XernerxStats telemetry.');\n\t}\n}\n\nnew Client();\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n---\n\n## Standalone REST Client ("
+		},
+		{
+			"kind": "code",
+			"text": "`StatsClient`"
+		},
+		{
+			"kind": "text",
+			"text": ")\n\nExtend "
+		},
+		{
+			"kind": "code",
+			"text": "`StatsClient`"
+		},
+		{
+			"kind": "text",
+			"text": " to post, query, update, and delete telemetry records on the Xernerx Suite API:\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```ts\nimport { StatsClient } from '@xernerx/stats';\nimport { Terminal } from '@xernerx/terminal';\n\nexport class Stats extends StatsClient {\n\tprivate readonly console = new Terminal({ scope: 'XS' });\n\n\tconstructor() {\n\t\tsuper({\n\t\t\tbotId: 'YOUR_BOT_ID',\n\t\t\ttoken: process.env.XERNERX_API_TOKEN!,\n\t\t});\n\t}\n\n\tasync run() {\n\t\t// Post a new telemetry snapshot\n\t\tawait this.post({\n\t\t\tguildCount: 1500,\n\t\t\tshardCount: 2,\n\t\t\tuserCount: 450000,\n\t\t\tonlineSince: Date.now(),\n\t\t});\n\n\t\t// Fetch historical telemetry snapshots\n\t\tconst history = await this.get();\n\t\tthis.console.info(`Fetched ${history.length} telemetry entries.`);\n\n\t\t// Update the latest telemetry entry (or pass a specific statId as the first argument)\n\t\tawait this.update({ guildCount: 1550 });\n\t\tawait this.update('STAT_ENTRY_ID', { guildCount: 1550 });\n\n\t\t// Delete a specific telemetry entry (or omit statId to clear history)\n\t\tawait this.delete('STAT_ENTRY_ID');\n\t}\n}\n\nnew Stats().run();\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n---\n\n## Direct Function ("
+		},
+		{
+			"kind": "code",
+			"text": "`post`"
+		},
+		{
+			"kind": "text",
+			"text": ")\n\nFor custom pipelines, call "
+		},
+		{
+			"kind": "code",
+			"text": "`post(data, token, baseUrl?)`"
+		},
+		{
+			"kind": "text",
+			"text": " directly:\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```ts\nimport { post } from '@xernerx/stats';\nimport { Terminal } from '@xernerx/terminal';\n\nexport class TelemetryPoster extends Terminal {\n\tconstructor() {\n\t\tsuper({ scope: 'XS' });\n\t}\n\n\tasync run() {\n\t\tawait post(\n\t\t\t{\n\t\t\t\tid: 'YOUR_BOT_ID',\n\t\t\t\tguildCount: 1500,\n\t\t\t\tuserCount: 450000,\n\t\t\t\tshardCount: 2,\n\t\t\t},\n\t\t\tprocess.env.XERNERX_API_TOKEN!\n\t\t);\n\n\t\tthis.info('Posted telemetry snapshot.');\n\t}\n}\n\nnew TelemetryPoster().run();\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n---\n\n## Options ("
+		},
+		{
+			"kind": "code",
+			"text": "`XernerxStatsSettings`"
+		},
+		{
+			"kind": "text",
+			"text": " & "
+		},
+		{
+			"kind": "code",
+			"text": "`StatsClientOptions`"
+		},
+		{
+			"kind": "text",
+			"text": ")\n\n| Option     | Type      | Default                     | Required      | Description                                                                   |\n| ---------- | --------- | --------------------------- | ------------- | ----------------------------------------------------------------------------- |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`token`"
+		},
+		{
+			"kind": "text",
+			"text": "    | "
+		},
+		{
+			"kind": "code",
+			"text": "`string`"
+		},
+		{
+			"kind": "text",
+			"text": "  | —                           | **Yes**       | Xernerx Suite API bearer token ("
+		},
+		{
+			"kind": "code",
+			"text": "`Bearer <token>`"
+		},
+		{
+			"kind": "text",
+			"text": ").                            |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`botId`"
+		},
+		{
+			"kind": "text",
+			"text": "    | "
+		},
+		{
+			"kind": "code",
+			"text": "`string`"
+		},
+		{
+			"kind": "text",
+			"text": "  | —                           | "
+		},
+		{
+			"kind": "code",
+			"text": "`StatsClient`"
+		},
+		{
+			"kind": "text",
+			"text": " | Discord bot snowflake ID to manage telemetry for.                             |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`interval`"
+		},
+		{
+			"kind": "text",
+			"text": " | "
+		},
+		{
+			"kind": "code",
+			"text": "`number`"
+		},
+		{
+			"kind": "text",
+			"text": "  | "
+		},
+		{
+			"kind": "code",
+			"text": "`1800000`"
+		},
+		{
+			"kind": "text",
+			"text": " (30m)             | No            | Interval in milliseconds between automatic telemetry posts in "
+		},
+		{
+			"kind": "code",
+			"text": "`XernerxStats`"
+		},
+		{
+			"kind": "text",
+			"text": ". |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`url`"
+		},
+		{
+			"kind": "text",
+			"text": "      | "
+		},
+		{
+			"kind": "code",
+			"text": "`string`"
+		},
+		{
+			"kind": "text",
+			"text": "  | "
+		},
+		{
+			"kind": "code",
+			"text": "`'https://api.xernerx.com'`"
+		},
+		{
+			"kind": "text",
+			"text": " | No            | Custom Xernerx Suite API base URL.                                            |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`dev`"
+		},
+		{
+			"kind": "text",
+			"text": "      | "
+		},
+		{
+			"kind": "code",
+			"text": "`boolean`"
+		},
+		{
+			"kind": "text",
+			"text": " | "
+		},
+		{
+			"kind": "code",
+			"text": "`false`"
+		},
+		{
+			"kind": "text",
+			"text": "                     | No            | Connect to the local development API ("
+		},
+		{
+			"kind": "code",
+			"text": "`http://localhost:4001`"
+		},
+		{
+			"kind": "text",
+			"text": ").               |\n\n---\n\n## "
+		},
+		{
+			"kind": "code",
+			"text": "`StatsClient`"
+		},
+		{
+			"kind": "text",
+			"text": " Methods\n\n| Method                                     | Return Type             | Description                                                                                       |\n| ------------------------------------------ | ----------------------- | ------------------------------------------------------------------------------------------------- |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`this.get(botId?)`"
+		},
+		{
+			"kind": "text",
+			"text": "                         | "
+		},
+		{
+			"kind": "code",
+			"text": "`Promise<StatRecord[]>`"
+		},
+		{
+			"kind": "text",
+			"text": " | Fetches historical telemetry records from "
+		},
+		{
+			"kind": "code",
+			"text": "`GET /v1/bots/:id/stats`"
+		},
+		{
+			"kind": "text",
+			"text": ".                               |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`this.post(data, botId?)`"
+		},
+		{
+			"kind": "text",
+			"text": "                  | "
+		},
+		{
+			"kind": "code",
+			"text": "`Promise<any>`"
+		},
+		{
+			"kind": "text",
+			"text": "          | Posts a new telemetry snapshot ("
+		},
+		{
+			"kind": "code",
+			"text": "`StatsPayload`"
+		},
+		{
+			"kind": "text",
+			"text": ") to "
+		},
+		{
+			"kind": "code",
+			"text": "`POST /v1/bots/:id/stats`"
+		},
+		{
+			"kind": "text",
+			"text": ".                     |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`this.update(statIdOrData, data?, botId?)`"
+		},
+		{
+			"kind": "text",
+			"text": " | "
+		},
+		{
+			"kind": "code",
+			"text": "`Promise<any>`"
+		},
+		{
+			"kind": "text",
+			"text": "          | Updates the latest telemetry snapshot or a specific "
+		},
+		{
+			"kind": "code",
+			"text": "`statId`"
+		},
+		{
+			"kind": "text",
+			"text": " via "
+		},
+		{
+			"kind": "code",
+			"text": "`PATCH /v1/bots/:id/stats`"
+		},
+		{
+			"kind": "text",
+			"text": ".      |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`this.delete(statId?, botId?)`"
+		},
+		{
+			"kind": "text",
+			"text": "             | "
+		},
+		{
+			"kind": "code",
+			"text": "`Promise<any>`"
+		},
+		{
+			"kind": "text",
+			"text": "          | Deletes a specific "
+		},
+		{
+			"kind": "code",
+			"text": "`statId`"
+		},
+		{
+			"kind": "text",
+			"text": " snapshot or clears telemetry history via "
+		},
+		{
+			"kind": "code",
+			"text": "`DELETE /v1/bots/:id/stats`"
+		},
+		{
+			"kind": "text",
+			"text": ". |\n\n---\n\n## Documentation & API Reference\n\nFull documentation and interactive API references are available on the **[Xernerx Documentation](https://docs.xernerx.com)** and the **["
+		},
+		{
+			"kind": "code",
+			"text": "`@xernerx/stats`"
+		},
+		{
+			"kind": "text",
+			"text": " Package Reference](https://docs.xernerx.com/packages/@xernerx/stats)**.\n\n### Package Symbols ("
+		},
+		{
+			"kind": "code",
+			"text": "`@xernerx/stats`"
+		},
+		{
+			"kind": "text",
+			"text": ")\n\n- **Classes**:\n  - ["
+		},
+		{
+			"kind": "code",
+			"text": "`XernerxStats`"
+		},
+		{
+			"kind": "text",
+			"text": "](https://docs.xernerx.com/packages/@xernerx/stats#class-XernerxStats) — Automatic telemetry extension for "
+		},
+		{
+			"kind": "code",
+			"text": "`XernerxClient`"
+		},
+		{
+			"kind": "text",
+			"text": " and "
+		},
+		{
+			"kind": "code",
+			"text": "`XernerxShardClient`"
+		},
+		{
+			"kind": "text",
+			"text": ".\n  - ["
+		},
+		{
+			"kind": "code",
+			"text": "`StatsClient`"
+		},
+		{
+			"kind": "text",
+			"text": "](https://docs.xernerx.com/packages/@xernerx/stats#class-StatsClient) — Standalone REST client for "
+		},
+		{
+			"kind": "code",
+			"text": "`GET`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`POST`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`PATCH`"
+		},
+		{
+			"kind": "text",
+			"text": ", and "
+		},
+		{
+			"kind": "code",
+			"text": "`DELETE`"
+		},
+		{
+			"kind": "text",
+			"text": " telemetry operations.\n  - ["
+		},
+		{
+			"kind": "code",
+			"text": "`BaseClient`"
+		},
+		{
+			"kind": "text",
+			"text": "](https://docs.xernerx.com/packages/@xernerx/stats#class-BaseClient) — Base authenticated HTTP client for the Xernerx Suite API.\n- **Interfaces**:\n  - ["
+		},
+		{
+			"kind": "code",
+			"text": "`XernerxStatsSettings`"
+		},
+		{
+			"kind": "text",
+			"text": "](https://docs.xernerx.com/packages/@xernerx/stats#interface-XernerxStatsSettings) — Configuration options for "
+		},
+		{
+			"kind": "code",
+			"text": "`XernerxStats`"
+		},
+		{
+			"kind": "text",
+			"text": ".\n  - ["
+		},
+		{
+			"kind": "code",
+			"text": "`StatsClientOptions`"
+		},
+		{
+			"kind": "text",
+			"text": "](https://docs.xernerx.com/packages/@xernerx/stats#interface-StatsClientOptions) — Configuration options for "
+		},
+		{
+			"kind": "code",
+			"text": "`StatsClient`"
+		},
+		{
+			"kind": "text",
+			"text": ".\n  - ["
+		},
+		{
+			"kind": "code",
+			"text": "`BaseClientOptions`"
+		},
+		{
+			"kind": "text",
+			"text": "](https://docs.xernerx.com/packages/@xernerx/stats#interface-BaseClientOptions) — Base URL and development mode options.\n  - ["
+		},
+		{
+			"kind": "code",
+			"text": "`StatRecord`"
+		},
+		{
+			"kind": "text",
+			"text": "](https://docs.xernerx.com/packages/@xernerx/stats#interface-StatRecord) — Historical telemetry snapshot returned by "
+		},
+		{
+			"kind": "code",
+			"text": "`this.get()`"
+		},
+		{
+			"kind": "text",
+			"text": ".\n  - ["
+		},
+		{
+			"kind": "code",
+			"text": "`StatsPayload`"
+		},
+		{
+			"kind": "text",
+			"text": "](https://docs.xernerx.com/packages/@xernerx/stats#interface-StatsPayload) — Telemetry payload structure ("
+		},
+		{
+			"kind": "code",
+			"text": "`guildCount`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`serverCount`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`userCount`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`shardCount`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`voteCount`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`onlineSince`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`shards`"
+		},
+		{
+			"kind": "text",
+			"text": ").\n  - ["
+		},
+		{
+			"kind": "code",
+			"text": "`ShardStats`"
+		},
+		{
+			"kind": "text",
+			"text": "](https://docs.xernerx.com/packages/@xernerx/stats#interface-ShardStats) — Per-shard telemetry breakdown ("
+		},
+		{
+			"kind": "code",
+			"text": "`shardId`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`onlineSince`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`userCount`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`guildCount`"
+		},
+		{
+			"kind": "text",
+			"text": ").\n- **Functions**:\n  - ["
+		},
+		{
+			"kind": "code",
+			"text": "`post()`"
+		},
+		{
+			"kind": "text",
+			"text": "](https://docs.xernerx.com/packages/@xernerx/stats#function-post) — Direct "
+		},
+		{
+			"kind": "code",
+			"text": "`POST /v1/bots/:id/stats`"
+		},
+		{
+			"kind": "text",
+			"text": " helper function.\n\n### REST API v1 Endpoints\n\n- [API Overview](https://docs.xernerx.com/api/v1#overview)\n- [Bearer Token Authentication](https://docs.xernerx.com/api/v1#authentication)\n- [Fetch Bot Stats ("
+		},
+		{
+			"kind": "code",
+			"text": "`GET /v1/bots/:id/stats`"
+		},
+		{
+			"kind": "text",
+			"text": ")](https://docs.xernerx.com/api/v1#fetch-bot-stats)\n- [Post Bot Stats ("
+		},
+		{
+			"kind": "code",
+			"text": "`POST /v1/bots/:id/stats`"
+		},
+		{
+			"kind": "text",
+			"text": ")](https://docs.xernerx.com/api/v1#post-bot-stats)\n- [Update Bot Stats ("
+		},
+		{
+			"kind": "code",
+			"text": "`PATCH /v1/bots/:id/stats`"
+		},
+		{
+			"kind": "text",
+			"text": ")](https://docs.xernerx.com/api/v1#update-bot-stats)\n- [Delete Bot Stats ("
+		},
+		{
+			"kind": "code",
+			"text": "`DELETE /v1/bots/:id/stats`"
+		},
+		{
+			"kind": "text",
+			"text": ")](https://docs.xernerx.com/api/v1#delete-bot-stats)\n\n### Ecosystem Links\n\n- [Xernerx Documentation Home](https://docs.xernerx.com)\n- [All Xernerx Packages](https://docs.xernerx.com/packages)\n- ["
+		},
+		{
+			"kind": "code",
+			"text": "`xernerx`"
+		},
+		{
+			"kind": "text",
+			"text": " Collection](https://docs.xernerx.com/packages/xernerx)\n- ["
+		},
+		{
+			"kind": "code",
+			"text": "`@xernerx/framework`"
+		},
+		{
+			"kind": "text",
+			"text": " Documentation](https://docs.xernerx.com/packages/@xernerx/framework)\n- ["
+		},
+		{
+			"kind": "code",
+			"text": "`@xernerx/commands`"
+		},
+		{
+			"kind": "text",
+			"text": " Documentation](https://docs.xernerx.com/packages/@xernerx/commands)\n- ["
+		},
+		{
+			"kind": "code",
+			"text": "`@xernerx/hooks`"
+		},
+		{
+			"kind": "text",
+			"text": " Documentation](https://docs.xernerx.com/packages/@xernerx/hooks)\n- ["
+		},
+		{
+			"kind": "code",
+			"text": "`@xernerx/terminal`"
+		},
+		{
+			"kind": "text",
+			"text": " Documentation](https://docs.xernerx.com/packages/@xernerx/terminal)\n- ["
+		},
+		{
+			"kind": "code",
+			"text": "`@xernerx/websocket`"
+		},
+		{
+			"kind": "text",
+			"text": " Documentation](https://docs.xernerx.com/packages/@xernerx/websocket)\n- [Release Changelog](https://info.xernerx.com/changelog#@xernerx/stats)\n\n---\n\n## Support & Links\n\n- [Discord Support Server](https://xernerx.com/discord)\n- ["
+		},
+		{
+			"kind": "code",
+			"text": "`@xernerx/stats`"
+		},
+		{
+			"kind": "text",
+			"text": " Package Documentation](https://docs.xernerx.com/packages/@xernerx/stats)\n- [Xernerx Developer Portal](https://portal.xernerx.com)\n- [Xernerx Website](https://xernerx.com)"
+		}
+	],
+	"symbolIdMap": {
+		"2": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/BaseClient.ts",
+			"qualifiedName": ""
+		},
+		"3": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/BaseClient.ts",
+			"qualifiedName": "BaseClientOptions"
+		},
+		"4": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/BaseClient.ts",
+			"qualifiedName": "BaseClientOptions.url"
+		},
+		"5": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/BaseClient.ts",
+			"qualifiedName": "BaseClientOptions.dev"
+		},
+		"6": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/BaseClient.ts",
+			"qualifiedName": "BaseClient"
+		},
+		"7": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/BaseClient.ts",
+			"qualifiedName": "BaseClient.__constructor"
+		},
+		"8": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/BaseClient.ts",
+			"qualifiedName": "BaseClient"
+		},
+		"9": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/BaseClient.ts",
+			"qualifiedName": "token"
+		},
+		"10": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/BaseClient.ts",
+			"qualifiedName": "options"
+		},
+		"11": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/BaseClient.ts",
+			"qualifiedName": "BaseClient.token"
+		},
+		"12": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/BaseClient.ts",
+			"qualifiedName": "BaseClient.url"
+		},
+		"13": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": ""
+		},
+		"14": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "StatsClientOptions"
+		},
+		"15": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "StatsClientOptions.botId"
+		},
+		"16": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "StatsClientOptions.token"
+		},
+		"17": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/BaseClient.ts",
+			"qualifiedName": "BaseClientOptions.url"
+		},
+		"18": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/BaseClient.ts",
+			"qualifiedName": "BaseClientOptions.dev"
+		},
+		"19": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "StatRecord"
+		},
+		"20": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "StatRecord._id"
+		},
+		"21": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "StatRecord.id"
+		},
+		"22": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "StatRecord.guildCount"
+		},
+		"23": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "StatRecord.shardCount"
+		},
+		"24": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "StatRecord.userCount"
+		},
+		"25": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "StatRecord.voteCount"
+		},
+		"26": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "StatRecord.onlineSince"
+		},
+		"27": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "StatRecord.shards"
+		},
+		"28": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "StatRecord.timestamp"
+		},
+		"29": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "StatsClient"
+		},
+		"30": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "StatsClient.__constructor"
+		},
+		"31": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "StatsClient"
+		},
+		"32": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "options"
+		},
+		"33": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "StatsClient.botId"
+		},
+		"38": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "StatsClient.get"
+		},
+		"39": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "StatsClient.get"
+		},
+		"40": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "botId"
+		},
+		"41": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "StatsClient.post"
+		},
+		"42": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "StatsClient.post"
+		},
+		"43": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "data"
+		},
+		"44": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "botId"
+		},
+		"45": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "StatsClient.update"
+		},
+		"46": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "StatsClient.update"
+		},
+		"47": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "statIdOrData"
+		},
+		"48": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "data"
+		},
+		"49": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "botId"
+		},
+		"50": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "StatsClient.delete"
+		},
+		"51": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "StatsClient.delete"
+		},
+		"52": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "statId"
+		},
+		"53": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/StatsClient.ts",
+			"qualifiedName": "botId"
+		},
+		"54": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/BaseClient.ts",
+			"qualifiedName": "BaseClient.token"
+		},
+		"55": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/BaseClient.ts",
+			"qualifiedName": "BaseClient.url"
+		},
+		"56": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/XernerxStats.ts",
+			"qualifiedName": ""
+		},
+		"57": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/XernerxStats.ts",
+			"qualifiedName": "XernerxStatsSettings"
+		},
+		"58": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/XernerxStats.ts",
+			"qualifiedName": "XernerxStatsSettings.interval"
+		},
+		"59": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/XernerxStats.ts",
+			"qualifiedName": "XernerxStatsSettings.token"
+		},
+		"60": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/BaseClient.ts",
+			"qualifiedName": "BaseClientOptions.url"
+		},
+		"61": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/BaseClient.ts",
+			"qualifiedName": "BaseClientOptions.dev"
+		},
+		"62": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/XernerxStats.ts",
+			"qualifiedName": "XernerxStats"
+		},
+		"63": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/XernerxStats.ts",
+			"qualifiedName": "XernerxStats.__constructor"
+		},
+		"64": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/XernerxStats.ts",
+			"qualifiedName": "XernerxStats"
+		},
+		"65": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/XernerxStats.ts",
+			"qualifiedName": "client"
+		},
+		"66": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/XernerxStats.ts",
+			"qualifiedName": "settings"
+		},
+		"67": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/XernerxStats.ts",
+			"qualifiedName": "XernerxStats.settings"
+		},
+		"71": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/BaseClient.ts",
+			"qualifiedName": "BaseClient.token"
+		},
+		"72": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/client/BaseClient.ts",
+			"qualifiedName": "BaseClient.url"
+		},
+		"73": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/functions/post.ts",
+			"qualifiedName": ""
+		},
+		"74": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/functions/post.ts",
+			"qualifiedName": "post"
+		},
+		"75": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/functions/post.ts",
+			"qualifiedName": "post"
+		},
+		"76": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/functions/post.ts",
+			"qualifiedName": "data"
+		},
+		"77": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/functions/post.ts",
+			"qualifiedName": "token"
+		},
+		"78": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/functions/post.ts",
+			"qualifiedName": "baseUrl"
+		},
+		"79": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/functions/post.ts",
+			"qualifiedName": "ShardStats"
+		},
+		"80": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/functions/post.ts",
+			"qualifiedName": "ShardStats.shardId"
+		},
+		"81": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/functions/post.ts",
+			"qualifiedName": "ShardStats.onlineSince"
+		},
+		"82": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/functions/post.ts",
+			"qualifiedName": "ShardStats.userCount"
+		},
+		"83": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/functions/post.ts",
+			"qualifiedName": "ShardStats.guildCount"
+		},
+		"84": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/functions/post.ts",
+			"qualifiedName": "StatsPayload"
+		},
+		"85": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/functions/post.ts",
+			"qualifiedName": "StatsPayload.id"
+		},
+		"86": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/functions/post.ts",
+			"qualifiedName": "StatsPayload.onlineSince"
+		},
+		"87": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/functions/post.ts",
+			"qualifiedName": "StatsPayload.guildCount"
+		},
+		"88": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/functions/post.ts",
+			"qualifiedName": "StatsPayload.serverCount"
+		},
+		"89": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/functions/post.ts",
+			"qualifiedName": "StatsPayload.userCount"
+		},
+		"90": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/functions/post.ts",
+			"qualifiedName": "StatsPayload.shardCount"
+		},
+		"91": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/functions/post.ts",
+			"qualifiedName": "StatsPayload.voteCount"
+		},
+		"92": {
+			"packageName": "@xernerx/stats",
+			"packagePath": "src/functions/post.ts",
+			"qualifiedName": "StatsPayload.shards"
+		}
+	},
+	"files": {
+		"entries": {
+			"1": "CHANGELOG.md",
+			"2": "src/client/BaseClient.ts",
+			"3": "src/client/StatsClient.ts",
+			"4": "src/client/XernerxStats.ts",
+			"5": "src/functions/post.ts",
+			"6": "README.md",
+			"7": ""
+		},
+		"reflections": {
+			"1": 1,
+			"2": 2,
+			"3": 13,
+			"4": 56,
+			"5": 73,
+			"6": 0,
+			"7": 0
+		}
+	}
+}
