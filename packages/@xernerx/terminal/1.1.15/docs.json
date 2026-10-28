@@ -1,0 +1,4882 @@
+{
+	"schemaVersion": "2.0",
+	"id": 0,
+	"name": "XERNERX LOG",
+	"variant": "project",
+	"kind": 1,
+	"flags": {},
+	"children": [
+		{
+			"id": 2,
+			"name": "main",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 17,
+					"name": "Terminal",
+					"variant": "declaration",
+					"kind": 128,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Formatted CLI logger and interactive terminal controller for Xernerx projects."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 18,
+							"name": "constructor",
+							"variant": "declaration",
+							"kind": 512,
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 121,
+									"character": 1
+								}
+							],
+							"signatures": [
+								{
+									"id": 19,
+									"name": "Terminal",
+									"variant": "signature",
+									"kind": 16384,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Creates a new "
+											},
+											{
+												"kind": "inline-tag",
+												"tag": "@link",
+												"text": "Terminal",
+												"target": 17
+											},
+											{
+												"kind": "text",
+												"text": " logger instance."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "main.ts",
+											"line": 121,
+											"character": 1
+										}
+									],
+									"parameters": [
+										{
+											"id": 20,
+											"name": "options",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Configuration options for formatting, scope, and spinner behavior."
+													}
+												]
+											},
+											"type": {
+												"type": "reference",
+												"target": 5,
+												"name": "TerminalOptions",
+												"package": "@xernerx/terminal"
+											},
+											"defaultValue": "{}"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": 17,
+										"name": "Terminal",
+										"package": "@xernerx/terminal"
+									}
+								}
+							]
+						},
+						{
+							"id": 22,
+							"name": "format",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPublic": true,
+								"isReadonly": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Active prefix format segments."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 56,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"target": 3,
+									"name": "Format",
+									"package": "@xernerx/terminal"
+								}
+							}
+						},
+						{
+							"id": 27,
+							"name": "icon",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPublic": true,
+								"isOptional": true,
+								"isReadonly": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Optional prefix icon."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 66,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 24,
+							"name": "level",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPublic": true,
+								"isReadonly": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Active log level for this instance."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 60,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": 4,
+								"name": "LogLevel",
+								"package": "@xernerx/terminal"
+							}
+						},
+						{
+							"id": 21,
+							"name": "now",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPublic": true,
+								"isReadonly": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Timestamp when this terminal instance was created."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 54,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"packageName": "typescript",
+									"packagePath": "lib/lib.es5.d.ts",
+									"qualifiedName": "Date"
+								},
+								"name": "Date",
+								"package": "typescript"
+							}
+						},
+						{
+							"id": 29,
+							"name": "prefix",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPublic": true,
+								"isReadonly": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Generates the formatted, pipe-delimited prefix string for the current moment."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 71,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 30,
+									"name": "__type",
+									"variant": "declaration",
+									"kind": 65536,
+									"flags": {},
+									"signatures": [
+										{
+											"id": 31,
+											"name": "__type",
+											"variant": "signature",
+											"kind": 4096,
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 28,
+							"name": "requestId",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPublic": true,
+								"isOptional": true,
+								"isReadonly": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Optional request correlation identifier."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 68,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 25,
+							"name": "scope",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPublic": true,
+								"isOptional": true,
+								"isReadonly": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Optional module or service scope name."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 62,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 26,
+							"name": "tag",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPublic": true,
+								"isOptional": true,
+								"isReadonly": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Optional secondary tag label."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 64,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 23,
+							"name": "title",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPublic": true,
+								"isReadonly": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Title displayed in the prefix and default "
+									},
+									{
+										"kind": "code",
+										"text": "`.box()`"
+									},
+									{
+										"kind": "text",
+										"text": " header."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 58,
+									"character": 17
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 57,
+							"name": "box",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 271,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 58,
+									"name": "box",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Renders a styled magenta box banner in the terminal."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "main.ts",
+											"line": 271,
+											"character": 8
+										}
+									],
+									"parameters": [
+										{
+											"id": 59,
+											"name": "text",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Banner text (defaults to "
+													},
+													{
+														"kind": "code",
+														"text": "`this.title`"
+													},
+													{
+														"kind": "text",
+														"text": ")."
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 60,
+											"name": "options",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Additional "
+													},
+													{
+														"kind": "code",
+														"text": "`boxen`"
+													},
+													{
+														"kind": "text",
+														"text": " styling options."
+													}
+												]
+											},
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "boxen",
+													"packagePath": "index.d.ts",
+													"qualifiedName": "Options"
+												},
+												"name": "Options",
+												"package": "boxen"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						},
+						{
+							"id": 52,
+							"name": "child",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 238,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 53,
+									"name": "child",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Creates a child "
+											},
+											{
+												"kind": "inline-tag",
+												"tag": "@link",
+												"text": "Terminal",
+												"target": 17
+											},
+											{
+												"kind": "text",
+												"text": " logger inheriting this instance's configuration and shared spinner."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "main.ts",
+											"line": 238,
+											"character": 8
+										}
+									],
+									"parameters": [
+										{
+											"id": 54,
+											"name": "options",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Overrides for scope, tag, icon, format, or level."
+													}
+												]
+											},
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "typescript",
+													"packagePath": "lib/lib.es5.d.ts",
+													"qualifiedName": "Partial"
+												},
+												"typeArguments": [
+													{
+														"type": "reference",
+														"target": 5,
+														"name": "TerminalOptions",
+														"package": "@xernerx/terminal"
+													}
+												],
+												"name": "Partial",
+												"package": "typescript"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": 17,
+										"name": "Terminal",
+										"package": "@xernerx/terminal"
+									}
+								}
+							]
+						},
+						{
+							"id": 55,
+							"name": "clear",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 259,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 56,
+									"name": "clear",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Clears the terminal screen."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "main.ts",
+											"line": 259,
+											"character": 8
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						},
+						{
+							"id": 76,
+							"name": "debug",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 337,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 77,
+									"name": "debug",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Logs a debug message when "
+											},
+											{
+												"kind": "code",
+												"text": "`this.level === 'DEBUG'`"
+											},
+											{
+												"kind": "text",
+												"text": "."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "main.ts",
+											"line": 337,
+											"character": 8
+										}
+									],
+									"typeParameters": [
+										{
+											"id": 78,
+											"name": "T",
+											"variant": "typeParam",
+											"kind": 131072,
+											"flags": {}
+										}
+									],
+									"parameters": [
+										{
+											"id": 79,
+											"name": "args",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {
+												"isRest": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Values or messages to format and print."
+													}
+												]
+											},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"target": 78,
+													"name": "T",
+													"package": "@xernerx/terminal",
+													"refersToTypeParameter": true
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						},
+						{
+							"id": 73,
+							"name": "error",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 318,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 74,
+									"name": "error",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Logs an error message or "
+											},
+											{
+												"kind": "code",
+												"text": "`Error`"
+											},
+											{
+												"kind": "text",
+												"text": " instance (extracting file, line, and column from the stack trace)."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "main.ts",
+											"line": 318,
+											"character": 8
+										}
+									],
+									"parameters": [
+										{
+											"id": 75,
+											"name": "args",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {
+												"isRest": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Error objects or messages to format and print."
+													}
+												]
+											},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "intrinsic",
+													"name": "any"
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						},
+						{
+							"id": 98,
+							"name": "fail",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 409,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 99,
+									"name": "fail",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Persists a red failure ("
+											},
+											{
+												"kind": "code",
+												"text": "`✖`"
+											},
+											{
+												"kind": "text",
+												"text": ") line and stops the spinner."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "main.ts",
+											"line": 409,
+											"character": 8
+										}
+									],
+									"parameters": [
+										{
+											"id": 100,
+											"name": "text",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Optional failure message."
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						},
+						{
+							"id": 65,
+							"name": "info",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 302,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 66,
+									"name": "info",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Alias for "
+											},
+											{
+												"kind": "inline-tag",
+												"tag": "@link",
+												"text": "Terminal.log",
+												"target": 61
+											},
+											{
+												"kind": "text",
+												"text": " — logs an informational message."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "main.ts",
+											"line": 302,
+											"character": 8
+										}
+									],
+									"typeParameters": [
+										{
+											"id": 67,
+											"name": "T",
+											"variant": "typeParam",
+											"kind": 131072,
+											"flags": {}
+										}
+									],
+									"parameters": [
+										{
+											"id": 68,
+											"name": "args",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {
+												"isRest": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Values or messages to format and print."
+													}
+												]
+											},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"target": 67,
+													"name": "T",
+													"package": "@xernerx/terminal",
+													"refersToTypeParameter": true
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						},
+						{
+							"id": 61,
+							"name": "log",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 294,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 62,
+									"name": "log",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Logs an informational message with the configured prefix."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "main.ts",
+											"line": 294,
+											"character": 8
+										}
+									],
+									"typeParameters": [
+										{
+											"id": 63,
+											"name": "T",
+											"variant": "typeParam",
+											"kind": 131072,
+											"flags": {}
+										}
+									],
+									"parameters": [
+										{
+											"id": 64,
+											"name": "args",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {
+												"isRest": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Values or messages to format and print."
+													}
+												]
+											},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"target": 63,
+													"name": "T",
+													"package": "@xernerx/terminal",
+													"refersToTypeParameter": true
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						},
+						{
+							"id": 90,
+							"name": "start",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 383,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 91,
+									"name": "start",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Starts or updates the active spinner text with the current prefix."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "main.ts",
+											"line": 383,
+											"character": 8
+										}
+									],
+									"parameters": [
+										{
+											"id": 92,
+											"name": "text",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Optional status text to display next to the spinner."
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						},
+						{
+							"id": 93,
+							"name": "stop",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 391,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 94,
+									"name": "stop",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Stops and clears the active spinner."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "main.ts",
+											"line": 391,
+											"character": 8
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						},
+						{
+							"id": 95,
+							"name": "succeed",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 400,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 96,
+									"name": "succeed",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Persists a green success ("
+											},
+											{
+												"kind": "code",
+												"text": "`✔`"
+											},
+											{
+												"kind": "text",
+												"text": ") line and stops the spinner."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "main.ts",
+											"line": 400,
+											"character": 8
+										}
+									],
+									"parameters": [
+										{
+											"id": 97,
+											"name": "text",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Optional completion message."
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						},
+						{
+							"id": 80,
+							"name": "table",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 347,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 81,
+									"name": "table",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Prints tabular data using "
+											},
+											{
+												"kind": "code",
+												"text": "`console.table`"
+											},
+											{
+												"kind": "text",
+												"text": "."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "main.ts",
+											"line": 347,
+											"character": 8
+										}
+									],
+									"parameters": [
+										{
+											"id": 82,
+											"name": "data",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Array or object of tabular data to display."
+													}
+												]
+											},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "intrinsic",
+													"name": "any"
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						},
+						{
+							"id": 84,
+							"name": "time",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 360,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 85,
+									"name": "time",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Starts a named timer for measuring execution duration."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "main.ts",
+											"line": 360,
+											"character": 8
+										}
+									],
+									"parameters": [
+										{
+											"id": 86,
+											"name": "label",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Unique label identifying the timer."
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						},
+						{
+							"id": 87,
+							"name": "timeEnd",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 368,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 88,
+									"name": "timeEnd",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Ends a previously started timer and logs the elapsed duration in milliseconds."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "main.ts",
+											"line": 368,
+											"character": 8
+										}
+									],
+									"parameters": [
+										{
+											"id": 89,
+											"name": "label",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Label passed to "
+													},
+													{
+														"kind": "inline-tag",
+														"tag": "@link",
+														"text": "Terminal.time",
+														"target": 84
+													},
+													{
+														"kind": "text",
+														"text": "."
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						},
+						{
+							"id": 69,
+							"name": "warn",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 310,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 70,
+									"name": "warn",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Logs a warning message with a yellow warning indicator."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "main.ts",
+											"line": 310,
+											"character": 8
+										}
+									],
+									"typeParameters": [
+										{
+											"id": 71,
+											"name": "T",
+											"variant": "typeParam",
+											"kind": 131072,
+											"flags": {}
+										}
+									],
+									"parameters": [
+										{
+											"id": 72,
+											"name": "args",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {
+												"isRest": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Values or messages to format and print."
+													}
+												]
+											},
+											"type": {
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"target": 71,
+													"name": "T",
+													"package": "@xernerx/terminal",
+													"refersToTypeParameter": true
+												}
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"children": [
+								18
+							]
+						},
+						{
+							"title": "Properties",
+							"children": [
+								22,
+								27,
+								24,
+								21,
+								29,
+								28,
+								25,
+								26,
+								23
+							]
+						},
+						{
+							"title": "Methods",
+							"children": [
+								57,
+								52,
+								55,
+								76,
+								73,
+								98,
+								65,
+								61,
+								90,
+								93,
+								95,
+								80,
+								84,
+								87,
+								69
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "main.ts",
+							"line": 52,
+							"character": 13
+						}
+					]
+				},
+				{
+					"id": 5,
+					"name": "TerminalOptions",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Configuration options for initializing a "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "Terminal",
+								"target": 17
+							},
+							{
+								"kind": "text",
+								"text": " logger instance."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 13,
+							"name": "_spinnerInstance",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Internal shared spinner instance passed to child loggers."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 40,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": 107,
+								"name": "Spinner",
+								"package": "@xernerx/terminal"
+							}
+						},
+						{
+							"id": 6,
+							"name": "format",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Ordered list of prefix segments to render before each log message."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 25,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"target": 3,
+									"name": "Format",
+									"package": "@xernerx/terminal"
+								}
+							}
+						},
+						{
+							"id": 11,
+							"name": "icon",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Optional icon or emoji rendered in the prefix."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 35,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 8,
+							"name": "level",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Minimum or active log level ("
+									},
+									{
+										"kind": "code",
+										"text": "`DEBUG`"
+									},
+									{
+										"kind": "text",
+										"text": " enables "
+									},
+									{
+										"kind": "code",
+										"text": "`.debug()`"
+									},
+									{
+										"kind": "text",
+										"text": " output)."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 29,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": 4,
+								"name": "LogLevel",
+								"package": "@xernerx/terminal"
+							}
+						},
+						{
+							"id": 12,
+							"name": "requestId",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Optional request or correlation ID rendered when "
+									},
+									{
+										"kind": "code",
+										"text": "`'requestId'`"
+									},
+									{
+										"kind": "text",
+										"text": " is in "
+									},
+									{
+										"kind": "code",
+										"text": "`format`"
+									},
+									{
+										"kind": "text",
+										"text": "."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 37,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 9,
+							"name": "scope",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Module or service scope label (e.g., "
+									},
+									{
+										"kind": "code",
+										"text": "`'WS'`"
+									},
+									{
+										"kind": "text",
+										"text": ", "
+									},
+									{
+										"kind": "code",
+										"text": "`'DB'`"
+									},
+									{
+										"kind": "text",
+										"text": ", "
+									},
+									{
+										"kind": "code",
+										"text": "`'AUTH'`"
+									},
+									{
+										"kind": "text",
+										"text": ")."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 31,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 16,
+							"name": "spin",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Whether the interactive CLI spinner is enabled (defaults to "
+									},
+									{
+										"kind": "code",
+										"text": "`true`"
+									},
+									{
+										"kind": "text",
+										"text": ")."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 46,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 14,
+							"name": "spinner",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Custom spinner frame characters."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 42,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									},
+									{
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "string"
+										}
+									}
+								]
+							}
+						},
+						{
+							"id": 15,
+							"name": "spinnerText",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Idle text shown next to the active spinner."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 44,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 10,
+							"name": "tag",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Secondary bold tag label for categorizing logs."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 33,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 7,
+							"name": "title",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Primary application or brand title shown in the prefix and banner box."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "main.ts",
+									"line": 27,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								13,
+								6,
+								11,
+								8,
+								12,
+								9,
+								16,
+								14,
+								15,
+								10,
+								7
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "main.ts",
+							"line": 23,
+							"character": 17
+						}
+					]
+				},
+				{
+					"id": 3,
+					"name": "Format",
+					"variant": "declaration",
+					"kind": 2097152,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Available metadata tokens that can be included in a "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "Terminal",
+								"target": 17
+							},
+							{
+								"kind": "text",
+								"text": " log prefix."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "main.ts",
+							"line": 13,
+							"character": 12
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "literal",
+								"value": "title"
+							},
+							{
+								"type": "literal",
+								"value": "date"
+							},
+							{
+								"type": "literal",
+								"value": "time"
+							},
+							{
+								"type": "literal",
+								"value": "datetime"
+							},
+							{
+								"type": "literal",
+								"value": "relative"
+							},
+							{
+								"type": "literal",
+								"value": "duration"
+							},
+							{
+								"type": "literal",
+								"value": "level"
+							},
+							{
+								"type": "literal",
+								"value": "env"
+							},
+							{
+								"type": "literal",
+								"value": "pid"
+							},
+							{
+								"type": "literal",
+								"value": "memory"
+							},
+							{
+								"type": "literal",
+								"value": "uptime"
+							},
+							{
+								"type": "literal",
+								"value": "scope"
+							},
+							{
+								"type": "literal",
+								"value": "tag"
+							},
+							{
+								"type": "literal",
+								"value": "icon"
+							},
+							{
+								"type": "literal",
+								"value": "requestId"
+							}
+						]
+					}
+				},
+				{
+					"id": 4,
+					"name": "LogLevel",
+					"variant": "declaration",
+					"kind": 2097152,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Supported severity levels for "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "Terminal",
+								"target": 17
+							},
+							{
+								"kind": "text",
+								"text": " output."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "main.ts",
+							"line": 18,
+							"character": 12
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "literal",
+								"value": "DEBUG"
+							},
+							{
+								"type": "literal",
+								"value": "INFO"
+							},
+							{
+								"type": "literal",
+								"value": "WARN"
+							},
+							{
+								"type": "literal",
+								"value": "ERROR"
+							}
+						]
+					}
+				},
+				{
+					"id": 101,
+					"name": "terminal",
+					"variant": "declaration",
+					"kind": 32,
+					"flags": {
+						"isConst": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Default singleton "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "Terminal",
+								"target": 17
+							},
+							{
+								"kind": "text",
+								"text": " instance."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "main.ts",
+							"line": 418,
+							"character": 13
+						}
+					],
+					"type": {
+						"type": "reference",
+						"target": 17,
+						"name": "Terminal",
+						"package": "@xernerx/terminal"
+					},
+					"defaultValue": "..."
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"children": [
+						17
+					]
+				},
+				{
+					"title": "Interfaces",
+					"children": [
+						5
+					]
+				},
+				{
+					"title": "Type Aliases",
+					"children": [
+						3,
+						4
+					]
+				},
+				{
+					"title": "Variables",
+					"children": [
+						101
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "main.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 102,
+			"name": "spinner",
+			"variant": "declaration",
+			"kind": 2,
+			"flags": {},
+			"children": [
+				{
+					"id": 107,
+					"name": "Spinner",
+					"variant": "declaration",
+					"kind": 128,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Lightweight, TTY-aware terminal spinner."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 108,
+							"name": "constructor",
+							"variant": "declaration",
+							"kind": 512,
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "spinner.ts",
+									"line": 37,
+									"character": 1
+								}
+							],
+							"signatures": [
+								{
+									"id": 109,
+									"name": "Spinner",
+									"variant": "signature",
+									"kind": 16384,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Creates a new "
+											},
+											{
+												"kind": "inline-tag",
+												"tag": "@link",
+												"text": "Spinner",
+												"target": 107
+											},
+											{
+												"kind": "text",
+												"text": " instance."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "spinner.ts",
+											"line": 37,
+											"character": 1
+										}
+									],
+									"parameters": [
+										{
+											"id": 110,
+											"name": "options",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Optional configuration for spinner text, state, and frames."
+													}
+												]
+											},
+											"type": {
+												"type": "reference",
+												"target": 103,
+												"name": "SpinnerOptions",
+												"package": "@xernerx/terminal"
+											},
+											"defaultValue": "{}"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": 107,
+										"name": "Spinner",
+										"package": "@xernerx/terminal"
+									}
+								}
+							]
+						},
+						{
+							"id": 111,
+							"name": "isSpinning",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPublic": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Whether the spinner interval is currently active."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "spinner.ts",
+									"line": 22,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"defaultValue": "false"
+						},
+						{
+							"id": 112,
+							"name": "text",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isPublic": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Default text displayed alongside the active spinner frame."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "spinner.ts",
+									"line": 24,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "''"
+						},
+						{
+							"id": 123,
+							"name": "clear",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "spinner.ts",
+									"line": 66,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 124,
+									"name": "clear",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Clears the current spinner line from the terminal if running in a TTY."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "spinner.ts",
+											"line": 66,
+											"character": 8
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						},
+						{
+							"id": 141,
+							"name": "fail",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "spinner.ts",
+									"line": 127,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 142,
+									"name": "fail",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Stops the spinner and persists a red failure ("
+											},
+											{
+												"kind": "code",
+												"text": "`✖`"
+											},
+											{
+												"kind": "text",
+												"text": ") line."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "spinner.ts",
+											"line": 127,
+											"character": 8
+										}
+									],
+									"parameters": [
+										{
+											"id": 143,
+											"name": "text",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Message to display."
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": 107,
+										"name": "Spinner",
+										"package": "@xernerx/terminal"
+									}
+								}
+							]
+						},
+						{
+							"id": 144,
+							"name": "info",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "spinner.ts",
+									"line": 135,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 145,
+									"name": "info",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Stops the spinner and persists a blue info ("
+											},
+											{
+												"kind": "code",
+												"text": "`ℹ`"
+											},
+											{
+												"kind": "text",
+												"text": ") line."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "spinner.ts",
+											"line": 135,
+											"character": 8
+										}
+									],
+									"parameters": [
+										{
+											"id": 146,
+											"name": "text",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Message to display."
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": 107,
+										"name": "Spinner",
+										"package": "@xernerx/terminal"
+									}
+								}
+							]
+						},
+						{
+							"id": 125,
+							"name": "start",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "spinner.ts",
+									"line": 75,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 126,
+									"name": "start",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Starts the spinner animation."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "spinner.ts",
+											"line": 75,
+											"character": 8
+										}
+									],
+									"parameters": [
+										{
+											"id": 127,
+											"name": "text",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Optional new default text for the spinner."
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": 107,
+										"name": "Spinner",
+										"package": "@xernerx/terminal"
+									}
+								}
+							]
+						},
+						{
+							"id": 128,
+							"name": "stop",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "spinner.ts",
+									"line": 94,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 129,
+									"name": "stop",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Stops the spinner animation and clears the line."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "spinner.ts",
+											"line": 94,
+											"character": 8
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": 107,
+										"name": "Spinner",
+										"package": "@xernerx/terminal"
+									}
+								}
+							]
+						},
+						{
+							"id": 138,
+							"name": "succeed",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "spinner.ts",
+									"line": 119,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 139,
+									"name": "succeed",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Stops the spinner and persists a green success ("
+											},
+											{
+												"kind": "code",
+												"text": "`✔`"
+											},
+											{
+												"kind": "text",
+												"text": ") line."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "spinner.ts",
+											"line": 119,
+											"character": 8
+										}
+									],
+									"parameters": [
+										{
+											"id": 140,
+											"name": "text",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Message to display."
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": 107,
+										"name": "Spinner",
+										"package": "@xernerx/terminal"
+									}
+								}
+							]
+						},
+						{
+							"id": 147,
+							"name": "warn",
+							"variant": "declaration",
+							"kind": 2048,
+							"flags": {
+								"isPublic": true
+							},
+							"sources": [
+								{
+									"fileName": "spinner.ts",
+									"line": 143,
+									"character": 8
+								}
+							],
+							"signatures": [
+								{
+									"id": 148,
+									"name": "warn",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Stops the spinner and persists a yellow warning ("
+											},
+											{
+												"kind": "code",
+												"text": "`⚠`"
+											},
+											{
+												"kind": "text",
+												"text": ") line."
+											}
+										]
+									},
+									"sources": [
+										{
+											"fileName": "spinner.ts",
+											"line": 143,
+											"character": 8
+										}
+									],
+									"parameters": [
+										{
+											"id": 149,
+											"name": "text",
+											"variant": "param",
+											"kind": 32768,
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Message to display."
+													}
+												]
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"target": 107,
+										"name": "Spinner",
+										"package": "@xernerx/terminal"
+									}
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"children": [
+								108
+							]
+						},
+						{
+							"title": "Properties",
+							"children": [
+								111,
+								112
+							]
+						},
+						{
+							"title": "Methods",
+							"children": [
+								123,
+								141,
+								144,
+								125,
+								128,
+								138,
+								147
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "spinner.ts",
+							"line": 20,
+							"character": 13
+						}
+					]
+				},
+				{
+					"id": 103,
+					"name": "SpinnerOptions",
+					"variant": "declaration",
+					"kind": 256,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Configuration options for the "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "Spinner",
+								"target": 107
+							},
+							{
+								"kind": "text",
+								"text": " instance."
+							}
+						]
+					},
+					"children": [
+						{
+							"id": 106,
+							"name": "frames",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Custom animation frames cycled while spinning."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "spinner.ts",
+									"line": 14,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							}
+						},
+						{
+							"id": 105,
+							"name": "isEnabled",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Whether the spinner animation and output are enabled."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "spinner.ts",
+									"line": 12,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						},
+						{
+							"id": 104,
+							"name": "text",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isOptional": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Text displayed next to the spinner indicator."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "spinner.ts",
+									"line": 10,
+									"character": 1
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								106,
+								105,
+								104
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "spinner.ts",
+							"line": 8,
+							"character": 17
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"children": [
+						107
+					]
+				},
+				{
+					"title": "Interfaces",
+					"children": [
+						103
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "spinner.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		}
+	],
+	"documents": [
+		{
+			"id": 1,
+			"name": "CHANGELOG",
+			"variant": "document",
+			"kind": 8388608,
+			"flags": {},
+			"content": [
+				{
+					"kind": "text",
+					"text": "<!-- @format -->\n\n## 1.1.15\n\n### Patch Changes\n\n- Update "
+				},
+				{
+					"kind": "code",
+					"text": "`README.md`"
+				},
+				{
+					"kind": "text",
+					"text": " documentation and JSDoc examples.\n\n## 1.1.14\n\n### Patch Changes\n\n- Standardize child logger test scope to 2-letter initials ("
+				},
+				{
+					"kind": "code",
+					"text": "`XT`"
+				},
+				{
+					"kind": "text",
+					"text": ") and add "
+				},
+				{
+					"kind": "code",
+					"text": "`tslib`"
+				},
+				{
+					"kind": "text",
+					"text": " to "
+				},
+				{
+					"kind": "code",
+					"text": "`devDependencies`"
+				},
+				{
+					"kind": "text",
+					"text": ".\n\n## 1.1.13\n\n### Patch Changes\n\n- Fixed type errors\n\n## 1.1.12\n\n### Patch Changes\n\n- Fix spinner persistence text and process exit cleanup, export "
+				},
+				{
+					"kind": "code",
+					"text": "`TerminalOptions`"
+				},
+				{
+					"kind": "text",
+					"text": ", "
+				},
+				{
+					"kind": "code",
+					"text": "`Format`"
+				},
+				{
+					"kind": "text",
+					"text": ", "
+				},
+				{
+					"kind": "code",
+					"text": "`LogLevel`"
+				},
+				{
+					"kind": "text",
+					"text": ", "
+				},
+				{
+					"kind": "code",
+					"text": "`Spinner`"
+				},
+				{
+					"kind": "text",
+					"text": ", and "
+				},
+				{
+					"kind": "code",
+					"text": "`SpinnerOptions`"
+				},
+				{
+					"kind": "text",
+					"text": " with full TypeDoc documentation, bind "
+				},
+				{
+					"kind": "code",
+					"text": "`Terminal`"
+				},
+				{
+					"kind": "text",
+					"text": " methods for callback usage, add "
+				},
+				{
+					"kind": "code",
+					"text": "`requestId`"
+				},
+				{
+					"kind": "text",
+					"text": " prefix formatting, and harden the Changeset + GitHub Actions release pipeline.\n\n# @xernerx/terminal\n\n## 1.1.11\n\n### Patch Changes\n\n- this the one\n\n## 1.1.10\n\n### Patch Changes\n\n- frick\n\n## 1.1.9\n\n### Patch Changes\n\n- nope...\n\n## 1.1.8\n\n### Patch Changes\n\n- maybe?\n\n## 1.1.7\n\n### Patch Changes\n\n- sigh\n\n## 1.1.6\n\n### Patch Changes\n\n- Yes\n\n## 1.1.5\n\n### Patch Changes\n\n- Fixing release once more\n\n## 1.1.4\n\n### Patch Changes\n\n- Fixing release again\n\n## 1.1.3\n\n### Patch Changes\n\n- Fixing release\n\n## 1.1.2\n\n### Patch Changes\n\n- Fixed release\n\n## 1.1.1\n\n### Patch Changes\n\n- Patch\n\n## 1.1.0\n\n### Minor Changes\n\n- Updated to not rely on ora"
+				}
+			],
+			"frontmatter": {}
+		}
+	],
+	"childrenIncludingDocuments": [
+		1,
+		2,
+		102
+	],
+	"groups": [
+		{
+			"title": "Documents",
+			"children": [
+				1
+			]
+		},
+		{
+			"title": "Modules",
+			"children": [
+				2,
+				102
+			]
+		}
+	],
+	"packageName": "@xernerx/terminal",
+	"packageVersion": "1.1.15",
+	"readme": [
+		{
+			"kind": "text",
+			"text": "<!-- @format -->\n\n![Xernerx Banner](https://xernerx.com/banner.png)\n\n# @xernerx/terminal\n\nFormatted CLI logger and interactive TTY spinner ("
+		},
+		{
+			"kind": "code",
+			"text": "`Terminal`"
+		},
+		{
+			"kind": "text",
+			"text": " & "
+		},
+		{
+			"kind": "code",
+			"text": "`Spinner`"
+		},
+		{
+			"kind": "text",
+			"text": ") for Xernerx Studios packages, Discord bots, and backend services.\n\n---\n\n## Features\n\n- **Class-Based "
+		},
+		{
+			"kind": "code",
+			"text": "`Terminal`"
+		},
+		{
+			"kind": "text",
+			"text": " Logger**: Extend "
+		},
+		{
+			"kind": "code",
+			"text": "`Terminal`"
+		},
+		{
+			"kind": "text",
+			"text": " (or instantiate "
+		},
+		{
+			"kind": "code",
+			"text": "`new Terminal()`"
+		},
+		{
+			"kind": "text",
+			"text": ") with customizable prefix tokens ("
+		},
+		{
+			"kind": "code",
+			"text": "`title`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`scope`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`tag`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`time`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`memory`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`duration`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`uptime`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`pid`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`requestId`"
+		},
+		{
+			"kind": "text",
+			"text": ", and more).\n- **Interactive TTY-Aware "
+		},
+		{
+			"kind": "code",
+			"text": "`Spinner`"
+		},
+		{
+			"kind": "text",
+			"text": "**: Non-blocking terminal spinner that automatically pauses and resumes around "
+		},
+		{
+			"kind": "code",
+			"text": "`.log()`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`.info()`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`.warn()`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`.error()`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`.table()`"
+		},
+		{
+			"kind": "text",
+			"text": ", and "
+		},
+		{
+			"kind": "code",
+			"text": "`.box()`"
+		},
+		{
+			"kind": "text",
+			"text": " calls.\n- **Scoped Child Loggers ("
+		},
+		{
+			"kind": "code",
+			"text": "`this.child()`"
+		},
+		{
+			"kind": "text",
+			"text": ")**: Create module-scoped loggers ("
+		},
+		{
+			"kind": "code",
+			"text": "`XF`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`XC`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`XS`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`XH`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`XT`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`XW`"
+		},
+		{
+			"kind": "text",
+			"text": ") that share the parent spinner instance without visual tearing.\n- **Rich Diagnostic Formatting**: Automatic "
+		},
+		{
+			"kind": "code",
+			"text": "`Error`"
+		},
+		{
+			"kind": "text",
+			"text": " stack trace parsing ("
+		},
+		{
+			"kind": "code",
+			"text": "`filepath:line:column`"
+		},
+		{
+			"kind": "text",
+			"text": "), "
+		},
+		{
+			"kind": "code",
+			"text": "`boxen`"
+		},
+		{
+			"kind": "text",
+			"text": " banner boxes ("
+		},
+		{
+			"kind": "code",
+			"text": "`this.box()`"
+		},
+		{
+			"kind": "text",
+			"text": "), tabular output ("
+		},
+		{
+			"kind": "code",
+			"text": "`this.table()`"
+		},
+		{
+			"kind": "text",
+			"text": "), and execution timers ("
+		},
+		{
+			"kind": "code",
+			"text": "`this.time()`"
+		},
+		{
+			"kind": "text",
+			"text": " / "
+		},
+		{
+			"kind": "code",
+			"text": "`this.timeEnd()`"
+		},
+		{
+			"kind": "text",
+			"text": ").\n- **Zero-Configuration Singleton**: Exports a pre-configured "
+		},
+		{
+			"kind": "code",
+			"text": "`terminal`"
+		},
+		{
+			"kind": "text",
+			"text": " singleton alongside the "
+		},
+		{
+			"kind": "code",
+			"text": "`Terminal`"
+		},
+		{
+			"kind": "text",
+			"text": " and "
+		},
+		{
+			"kind": "code",
+			"text": "`Spinner`"
+		},
+		{
+			"kind": "text",
+			"text": " classes.\n\n---\n\n## Install\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```bash\npnpm add @xernerx/terminal\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```bash\nnpm install @xernerx/terminal\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n---\n\n## Setup\n\nExtend "
+		},
+		{
+			"kind": "code",
+			"text": "`Terminal`"
+		},
+		{
+			"kind": "text",
+			"text": " to log formatted messages, banners, timers, and spinners:\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```ts\nimport { Terminal } from '@xernerx/terminal';\n\nexport class Logger extends Terminal {\n\tconstructor() {\n\t\tsuper({\n\t\t\ttitle: 'XERNERX',\n\t\t\tscope: 'XT',\n\t\t\ttag: 'Main',\n\t\t});\n\n\t\tthis.box('XERNERX BOT');\n\t\tthis.info('Starting bot services...');\n\t\tthis.log('Connected to primary cluster');\n\t\tthis.warn('Slow query detected (320ms)');\n\t\tthis.error(new Error('Connection reset'));\n\n\t\t// Timing helpers\n\t\tthis.time('sync');\n\t\tthis.timeEnd('sync');\n\n\t\t// Interactive spinner control\n\t\tthis.start('Deploying application commands...');\n\t\tthis.succeed('Application commands deployed');\n\t}\n}\n\nnew Logger();\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n---\n\n## Standalone Spinner ("
+		},
+		{
+			"kind": "code",
+			"text": "`Spinner`"
+		},
+		{
+			"kind": "text",
+			"text": ")\n\nExtend "
+		},
+		{
+			"kind": "code",
+			"text": "`Spinner`"
+		},
+		{
+			"kind": "text",
+			"text": " to manage custom CLI progress indicators:\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```ts\nimport { Spinner } from '@xernerx/terminal';\n\nexport class BuildSpinner extends Spinner {\n\tconstructor() {\n\t\tsuper({\n\t\t\ttext: 'Compiling TypeScript bundles...',\n\t\t});\n\n\t\tthis.start();\n\t\tthis.succeed('Build complete!');\n\t}\n}\n\nnew BuildSpinner();\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n---\n\n## Configuration ("
+		},
+		{
+			"kind": "code",
+			"text": "`TerminalOptions`"
+		},
+		{
+			"kind": "text",
+			"text": ")\n\n| Option        | Type                 | Default                                                      | Description                                                                          |\n| ------------- | -------------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------ |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`title`"
+		},
+		{
+			"kind": "text",
+			"text": "       | "
+		},
+		{
+			"kind": "code",
+			"text": "`string`"
+		},
+		{
+			"kind": "text",
+			"text": "             | "
+		},
+		{
+			"kind": "code",
+			"text": "`'XERNERX'`"
+		},
+		{
+			"kind": "text",
+			"text": "                                                  | Primary brand or service title shown in the prefix and "
+		},
+		{
+			"kind": "code",
+			"text": "`this.box()`"
+		},
+		{
+			"kind": "text",
+			"text": ".                 |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`format`"
+		},
+		{
+			"kind": "text",
+			"text": "      | "
+		},
+		{
+			"kind": "code",
+			"text": "`Array<Format>`"
+		},
+		{
+			"kind": "text",
+			"text": "      | "
+		},
+		{
+			"kind": "code",
+			"text": "`['title', 'scope', 'time', 'memory', 'duration', 'uptime']`"
+		},
+		{
+			"kind": "text",
+			"text": " | Ordered prefix tokens rendered before each log line.                                 |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`level`"
+		},
+		{
+			"kind": "text",
+			"text": "       | "
+		},
+		{
+			"kind": "code",
+			"text": "`LogLevel`"
+		},
+		{
+			"kind": "text",
+			"text": "           | "
+		},
+		{
+			"kind": "code",
+			"text": "`'INFO'`"
+		},
+		{
+			"kind": "text",
+			"text": "                                                     | Active log level ("
+		},
+		{
+			"kind": "code",
+			"text": "`'DEBUG' \\| 'INFO' \\| 'WARN' \\| 'ERROR'`"
+		},
+		{
+			"kind": "text",
+			"text": ").                         |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`scope`"
+		},
+		{
+			"kind": "text",
+			"text": "       | "
+		},
+		{
+			"kind": "code",
+			"text": "`string`"
+		},
+		{
+			"kind": "text",
+			"text": "             | —                                                            | Short module or package scope (e.g. "
+		},
+		{
+			"kind": "code",
+			"text": "`'XF'`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`'XC'`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`'XS'`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`'XH'`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`'XT'`"
+		},
+		{
+			"kind": "text",
+			"text": ", "
+		},
+		{
+			"kind": "code",
+			"text": "`'XW'`"
+		},
+		{
+			"kind": "text",
+			"text": "). |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`tag`"
+		},
+		{
+			"kind": "text",
+			"text": "         | "
+		},
+		{
+			"kind": "code",
+			"text": "`string`"
+		},
+		{
+			"kind": "text",
+			"text": "             | —                                                            | Secondary bold label for categorizing output.                                        |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`icon`"
+		},
+		{
+			"kind": "text",
+			"text": "        | "
+		},
+		{
+			"kind": "code",
+			"text": "`string`"
+		},
+		{
+			"kind": "text",
+			"text": "             | —                                                            | Optional emoji or symbol rendered in the prefix.                                     |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`requestId`"
+		},
+		{
+			"kind": "text",
+			"text": "   | "
+		},
+		{
+			"kind": "code",
+			"text": "`string`"
+		},
+		{
+			"kind": "text",
+			"text": "             | —                                                            | Optional correlation/request ID shown when "
+		},
+		{
+			"kind": "code",
+			"text": "`'requestId'`"
+		},
+		{
+			"kind": "text",
+			"text": " is enabled.                 |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`spin`"
+		},
+		{
+			"kind": "text",
+			"text": "        | "
+		},
+		{
+			"kind": "code",
+			"text": "`boolean`"
+		},
+		{
+			"kind": "text",
+			"text": "            | "
+		},
+		{
+			"kind": "code",
+			"text": "`true`"
+		},
+		{
+			"kind": "text",
+			"text": "                                                       | Enables or disables the interactive TTY spinner.                                     |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`spinner`"
+		},
+		{
+			"kind": "text",
+			"text": "     | "
+		},
+		{
+			"kind": "code",
+			"text": "`string \\| string[]`"
+		},
+		{
+			"kind": "text",
+			"text": " | Braille dots                                                 | Custom animation frame characters for the spinner.                                   |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`spinnerText`"
+		},
+		{
+			"kind": "text",
+			"text": " | "
+		},
+		{
+			"kind": "code",
+			"text": "`string`"
+		},
+		{
+			"kind": "text",
+			"text": "             | "
+		},
+		{
+			"kind": "code",
+			"text": "`''`"
+		},
+		{
+			"kind": "text",
+			"text": "                                                         | Default idle text displayed next to the active spinner.                              |\n\n### Supported "
+		},
+		{
+			"kind": "code",
+			"text": "`Format`"
+		},
+		{
+			"kind": "text",
+			"text": " Tokens\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "`'title' | 'date' | 'time' | 'datetime' | 'relative' | 'duration' | 'level' | 'env' | 'pid' | 'memory' | 'uptime' | 'scope' | 'tag' | 'icon' | 'requestId'`"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n---\n\n## Methods\n\n### "
+		},
+		{
+			"kind": "code",
+			"text": "`Terminal`"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n| Method                                     | Description                                                                      |\n| ------------------------------------------ | -------------------------------------------------------------------------------- |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`this.child(options)`"
+		},
+		{
+			"kind": "text",
+			"text": "                      | Creates a scoped child "
+		},
+		{
+			"kind": "code",
+			"text": "`Terminal`"
+		},
+		{
+			"kind": "text",
+			"text": " sharing the parent spinner instance.           |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`this.log(...args)`"
+		},
+		{
+			"kind": "text",
+			"text": " / "
+		},
+		{
+			"kind": "code",
+			"text": "`this.info(...args)`"
+		},
+		{
+			"kind": "text",
+			"text": " | Logs an informational message ("
+		},
+		{
+			"kind": "code",
+			"text": "`ℹ`"
+		},
+		{
+			"kind": "text",
+			"text": ").                                             |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`this.warn(...args)`"
+		},
+		{
+			"kind": "text",
+			"text": "                       | Logs a warning message ("
+		},
+		{
+			"kind": "code",
+			"text": "`⚠`"
+		},
+		{
+			"kind": "text",
+			"text": ").                                                    |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`this.error(...args)`"
+		},
+		{
+			"kind": "text",
+			"text": "                      | Logs an error message or "
+		},
+		{
+			"kind": "code",
+			"text": "`Error`"
+		},
+		{
+			"kind": "text",
+			"text": " with parsed stack "
+		},
+		{
+			"kind": "code",
+			"text": "`filepath:line:column`"
+		},
+		{
+			"kind": "text",
+			"text": " ("
+		},
+		{
+			"kind": "code",
+			"text": "`✖`"
+		},
+		{
+			"kind": "text",
+			"text": "). |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`this.debug(...args)`"
+		},
+		{
+			"kind": "text",
+			"text": "                      | Logs a debug message when "
+		},
+		{
+			"kind": "code",
+			"text": "`level === 'DEBUG'`"
+		},
+		{
+			"kind": "text",
+			"text": ".                                   |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`this.box(text?, options?)`"
+		},
+		{
+			"kind": "text",
+			"text": "                | Renders a rounded magenta banner box using "
+		},
+		{
+			"kind": "code",
+			"text": "`boxen`"
+		},
+		{
+			"kind": "text",
+			"text": ".                              |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`this.table(data)`"
+		},
+		{
+			"kind": "text",
+			"text": "                         | Prints tabular data while cleanly pausing and resuming the active spinner.       |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`this.time(label)`"
+		},
+		{
+			"kind": "text",
+			"text": " / "
+		},
+		{
+			"kind": "code",
+			"text": "`this.timeEnd(label)`"
+		},
+		{
+			"kind": "text",
+			"text": " | Measures and logs elapsed time in milliseconds.                                  |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`this.clear()`"
+		},
+		{
+			"kind": "text",
+			"text": "                             | Clears the terminal screen safely around the active spinner.                     |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`this.start(text?)`"
+		},
+		{
+			"kind": "text",
+			"text": " / "
+		},
+		{
+			"kind": "code",
+			"text": "`this.stop()`"
+		},
+		{
+			"kind": "text",
+			"text": "        | Starts, updates, or stops the interactive spinner.                               |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`this.succeed(text?)`"
+		},
+		{
+			"kind": "text",
+			"text": " / "
+		},
+		{
+			"kind": "code",
+			"text": "`this.fail(text?)`"
+		},
+		{
+			"kind": "text",
+			"text": " | Persists a green success ("
+		},
+		{
+			"kind": "code",
+			"text": "`✔`"
+		},
+		{
+			"kind": "text",
+			"text": ") or red failure ("
+		},
+		{
+			"kind": "code",
+			"text": "`✖`"
+		},
+		{
+			"kind": "text",
+			"text": ") line and stops the spinner.  |\n\n### "
+		},
+		{
+			"kind": "code",
+			"text": "`Spinner`"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n| Method                | Description                                                      |\n| --------------------- | ---------------------------------------------------------------- |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`this.start(text?)`"
+		},
+		{
+			"kind": "text",
+			"text": "   | Starts the spinner interval and optionally updates "
+		},
+		{
+			"kind": "code",
+			"text": "`this.text`"
+		},
+		{
+			"kind": "text",
+			"text": ".  |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`this.stop()`"
+		},
+		{
+			"kind": "text",
+			"text": "         | Stops the spinner interval and clears the current terminal line. |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`this.clear()`"
+		},
+		{
+			"kind": "text",
+			"text": "        | Clears the active spinner line in TTY environments.              |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`this.succeed(text?)`"
+		},
+		{
+			"kind": "text",
+			"text": " | Stops the spinner and persists a green "
+		},
+		{
+			"kind": "code",
+			"text": "`✔`"
+		},
+		{
+			"kind": "text",
+			"text": " line.                 |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`this.fail(text?)`"
+		},
+		{
+			"kind": "text",
+			"text": "    | Stops the spinner and persists a red "
+		},
+		{
+			"kind": "code",
+			"text": "`✖`"
+		},
+		{
+			"kind": "text",
+			"text": " line.                   |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`this.info(text?)`"
+		},
+		{
+			"kind": "text",
+			"text": "    | Stops the spinner and persists a blue "
+		},
+		{
+			"kind": "code",
+			"text": "`ℹ`"
+		},
+		{
+			"kind": "text",
+			"text": " line.                  |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`this.warn(text?)`"
+		},
+		{
+			"kind": "text",
+			"text": "    | Stops the spinner and persists a yellow "
+		},
+		{
+			"kind": "code",
+			"text": "`⚠`"
+		},
+		{
+			"kind": "text",
+			"text": " line.                |\n\n---\n\n## Documentation & API Reference\n\nFull documentation and symbol references are available on the **[Xernerx Documentation](https://docs.xernerx.com)** and the **["
+		},
+		{
+			"kind": "code",
+			"text": "`@xernerx/terminal`"
+		},
+		{
+			"kind": "text",
+			"text": " Package Reference](https://docs.xernerx.com/packages/@xernerx/terminal)**.\n\n### Package Symbols ("
+		},
+		{
+			"kind": "code",
+			"text": "`@xernerx/terminal`"
+		},
+		{
+			"kind": "text",
+			"text": ")\n\n- **Classes**:\n  - ["
+		},
+		{
+			"kind": "code",
+			"text": "`Terminal`"
+		},
+		{
+			"kind": "text",
+			"text": "](https://docs.xernerx.com/packages/@xernerx/terminal#class-Terminal) — Formatted CLI logger and interactive terminal controller.\n  - ["
+		},
+		{
+			"kind": "code",
+			"text": "`Spinner`"
+		},
+		{
+			"kind": "text",
+			"text": "](https://docs.xernerx.com/packages/@xernerx/terminal#class-Spinner) — Lightweight, TTY-aware terminal spinner.\n- **Interfaces**:\n  - ["
+		},
+		{
+			"kind": "code",
+			"text": "`TerminalOptions`"
+		},
+		{
+			"kind": "text",
+			"text": "](https://docs.xernerx.com/packages/@xernerx/terminal#interface-TerminalOptions) — Configuration options for "
+		},
+		{
+			"kind": "code",
+			"text": "`Terminal`"
+		},
+		{
+			"kind": "text",
+			"text": ".\n  - ["
+		},
+		{
+			"kind": "code",
+			"text": "`SpinnerOptions`"
+		},
+		{
+			"kind": "text",
+			"text": "](https://docs.xernerx.com/packages/@xernerx/terminal#interface-SpinnerOptions) — Configuration options for "
+		},
+		{
+			"kind": "code",
+			"text": "`Spinner`"
+		},
+		{
+			"kind": "text",
+			"text": ".\n\n### Ecosystem Links\n\n- [Xernerx Documentation Home](https://docs.xernerx.com)\n- [All Xernerx Packages](https://docs.xernerx.com/packages)\n- ["
+		},
+		{
+			"kind": "code",
+			"text": "`xernerx`"
+		},
+		{
+			"kind": "text",
+			"text": " Collection](https://docs.xernerx.com/packages/xernerx)\n- ["
+		},
+		{
+			"kind": "code",
+			"text": "`@xernerx/framework`"
+		},
+		{
+			"kind": "text",
+			"text": " Documentation](https://docs.xernerx.com/packages/@xernerx/framework)\n- ["
+		},
+		{
+			"kind": "code",
+			"text": "`@xernerx/commands`"
+		},
+		{
+			"kind": "text",
+			"text": " Documentation](https://docs.xernerx.com/packages/@xernerx/commands)\n- ["
+		},
+		{
+			"kind": "code",
+			"text": "`@xernerx/hooks`"
+		},
+		{
+			"kind": "text",
+			"text": " Documentation](https://docs.xernerx.com/packages/@xernerx/hooks)\n- ["
+		},
+		{
+			"kind": "code",
+			"text": "`@xernerx/stats`"
+		},
+		{
+			"kind": "text",
+			"text": " Documentation](https://docs.xernerx.com/packages/@xernerx/stats)\n- ["
+		},
+		{
+			"kind": "code",
+			"text": "`@xernerx/websocket`"
+		},
+		{
+			"kind": "text",
+			"text": " Documentation](https://docs.xernerx.com/packages/@xernerx/websocket)\n- [Release Changelog](https://info.xernerx.com/changelog#@xernerx/terminal)\n\n---\n\n## Support & Links\n\n- [Discord Support Server](https://xernerx.com/discord)\n- ["
+		},
+		{
+			"kind": "code",
+			"text": "`@xernerx/terminal`"
+		},
+		{
+			"kind": "text",
+			"text": " Package Documentation](https://docs.xernerx.com/packages/@xernerx/terminal)\n- [Xernerx Developer Portal](https://portal.xernerx.com)\n- [Xernerx Website](https://xernerx.com)"
+		}
+	],
+	"symbolIdMap": {
+		"2": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": ""
+		},
+		"3": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Format"
+		},
+		"4": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "LogLevel"
+		},
+		"5": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "TerminalOptions"
+		},
+		"6": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "TerminalOptions.format"
+		},
+		"7": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "TerminalOptions.title"
+		},
+		"8": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "TerminalOptions.level"
+		},
+		"9": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "TerminalOptions.scope"
+		},
+		"10": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "TerminalOptions.tag"
+		},
+		"11": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "TerminalOptions.icon"
+		},
+		"12": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "TerminalOptions.requestId"
+		},
+		"13": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "TerminalOptions._spinnerInstance"
+		},
+		"14": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "TerminalOptions.spinner"
+		},
+		"15": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "TerminalOptions.spinnerText"
+		},
+		"16": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "TerminalOptions.spin"
+		},
+		"17": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal"
+		},
+		"18": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.__constructor"
+		},
+		"19": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal"
+		},
+		"20": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "options"
+		},
+		"21": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.now"
+		},
+		"22": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.format"
+		},
+		"23": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.title"
+		},
+		"24": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.level"
+		},
+		"25": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.scope"
+		},
+		"26": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.tag"
+		},
+		"27": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.icon"
+		},
+		"28": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.requestId"
+		},
+		"29": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.prefix"
+		},
+		"30": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "__type"
+		},
+		"31": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "__type"
+		},
+		"52": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.child"
+		},
+		"53": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.child"
+		},
+		"54": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "options"
+		},
+		"55": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.clear"
+		},
+		"56": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.clear"
+		},
+		"57": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.box"
+		},
+		"58": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.box"
+		},
+		"59": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "text"
+		},
+		"60": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "options"
+		},
+		"61": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.log"
+		},
+		"62": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.log"
+		},
+		"63": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "T"
+		},
+		"64": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "args"
+		},
+		"65": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.info"
+		},
+		"66": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.info"
+		},
+		"67": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "T"
+		},
+		"68": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "args"
+		},
+		"69": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.warn"
+		},
+		"70": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.warn"
+		},
+		"71": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "T"
+		},
+		"72": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "args"
+		},
+		"73": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.error"
+		},
+		"74": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.error"
+		},
+		"75": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "args"
+		},
+		"76": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.debug"
+		},
+		"77": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.debug"
+		},
+		"78": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "T"
+		},
+		"79": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "args"
+		},
+		"80": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.table"
+		},
+		"81": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.table"
+		},
+		"82": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "data"
+		},
+		"84": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.time"
+		},
+		"85": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.time"
+		},
+		"86": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "label"
+		},
+		"87": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.timeEnd"
+		},
+		"88": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.timeEnd"
+		},
+		"89": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "label"
+		},
+		"90": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.start"
+		},
+		"91": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.start"
+		},
+		"92": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "text"
+		},
+		"93": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.stop"
+		},
+		"94": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.stop"
+		},
+		"95": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.succeed"
+		},
+		"96": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.succeed"
+		},
+		"97": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "text"
+		},
+		"98": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.fail"
+		},
+		"99": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "Terminal.fail"
+		},
+		"100": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "text"
+		},
+		"101": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/main.ts",
+			"qualifiedName": "terminal"
+		},
+		"102": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": ""
+		},
+		"103": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "SpinnerOptions"
+		},
+		"104": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "SpinnerOptions.text"
+		},
+		"105": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "SpinnerOptions.isEnabled"
+		},
+		"106": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "SpinnerOptions.frames"
+		},
+		"107": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "Spinner"
+		},
+		"108": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "Spinner.__constructor"
+		},
+		"109": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "Spinner"
+		},
+		"110": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "options"
+		},
+		"111": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "Spinner.isSpinning"
+		},
+		"112": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "Spinner.text"
+		},
+		"123": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "Spinner.clear"
+		},
+		"124": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "Spinner.clear"
+		},
+		"125": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "Spinner.start"
+		},
+		"126": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "Spinner.start"
+		},
+		"127": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "text"
+		},
+		"128": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "Spinner.stop"
+		},
+		"129": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "Spinner.stop"
+		},
+		"138": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "Spinner.succeed"
+		},
+		"139": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "Spinner.succeed"
+		},
+		"140": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "text"
+		},
+		"141": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "Spinner.fail"
+		},
+		"142": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "Spinner.fail"
+		},
+		"143": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "text"
+		},
+		"144": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "Spinner.info"
+		},
+		"145": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "Spinner.info"
+		},
+		"146": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "text"
+		},
+		"147": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "Spinner.warn"
+		},
+		"148": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "Spinner.warn"
+		},
+		"149": {
+			"packageName": "@xernerx/terminal",
+			"packagePath": "src/spinner.ts",
+			"qualifiedName": "text"
+		}
+	},
+	"files": {
+		"entries": {
+			"1": "CHANGELOG.md",
+			"2": "src/main.ts",
+			"3": "src/spinner.ts",
+			"4": "README.md",
+			"5": ""
+		},
+		"reflections": {
+			"1": 1,
+			"2": 2,
+			"3": 102,
+			"4": 0,
+			"5": 0
+		}
+	}
+}
